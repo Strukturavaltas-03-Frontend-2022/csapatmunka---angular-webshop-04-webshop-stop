@@ -14,9 +14,11 @@ export class ConfigService {
   appName: string = 'Sample Webshop';
 
   menuItems: IMenuItem[] = [
-    {text: 'Home', link: '/', icon: 'home'},
-    {text: 'Category01', link: '/cat01'},
-    {text: 'Category02', link: '/cat02'},
+    { text: 'Home', link: '/', icon: 'home' },
+    { text: 'Category01', link: '/cat01' },
+    { text: 'Category02', link: '/cat02' },
+    { text: 'Category03', link: '/cat03' },
+    { text: 'Category04', link: '/cat04' },
   ];
 
   constructor() { }
