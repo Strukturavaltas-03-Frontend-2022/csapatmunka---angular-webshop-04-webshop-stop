@@ -7,26 +7,32 @@ import { Product } from 'src/app/model/classes/product';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-  @Input() oneProduct: Product = {
-    id: 1,
-    catId: 3,
-    name: 'Things Fall Apart',
-    author: 'Chinua Achebe',
-    description: 'https://en.wikipedia.org/wiki/Things_Fall_Apart',
-    image: 'https://m.media-amazon.com/images/I/919XM42JQlL.jpg',
-    price: 6.99,
-    stock: 0,
-    featured: true,
-    active: false
-  };
-  @Input() cardDescription: string = `An even longer text, because that's how descriptions are.`
+
+  @Input() oneProduct: Product = new Product;
+  stockColor: string = '';
+  grammarCase: string = ''
+
   @Input() stockText: string = 'Stock:'
   @Input() priceText: string = 'Price:'
+
+  @Input() cardDescription: string = `An even longer text, because that's how descriptions are.`
 
 
   constructor() { }
 
   ngOnInit(): void {
+    this.stockTextColorizer();
+    this.singularCaseChecker()
+  }
+
+  stockTextColorizer(): void {
+    this.stockColor = this.oneProduct.stock > 4 ? '#52d352' : '#ffb74b';
+  }
+
+  singularCaseChecker(): void {
+    this.grammarCase = this.oneProduct.stock > 1
+      ? 'plural' : this.oneProduct.stock === 1
+        ? 'singular' : 'zero'
   }
 
 }
