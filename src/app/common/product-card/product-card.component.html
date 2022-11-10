@@ -1,20 +1,22 @@
 <div class="customcard">
   <div class="image__container">
-    <img src="https://m.media-amazon.com/images/I/919XM42JQlL.jpg" alt="book">
+    <img [src]="cardImageUrl" alt="book">
   </div>
   <div class="card__data">
-    <div class="card--title h5">Egy relatíve hosszú szöveg cím gyanánt</div>
-    <div class="card--description small">Rövid leírás, ami amúgy ha belegondolok, valszeg magasabb kártyákat igényel
-      majd...
+    <div class="card__top">
+      <div class="card--author">{{cardAuthor}}</div>
+      <div class="card--title h5">{{cardTitle}}</div>
+      <div class="card--description small">{{cardDescription}}
+      </div>
     </div>
     <div class="card__bottom">
       <div class="stock">
-        <div class="stock--text">Készlet:</div>
-        <div class="stock--status">15 db</div>
+        <div class="stock--text">{{stockText}}</div>
+        <div class="stock--status">{{stockStatus}} in stock</div>
       </div>
       <div class="price">
-        <div class="price--text">Ár:</div>
-        <div class="price--status">15359 Ft</div>
+        <div class="price--text">{{priceText}}</div>
+        <div class="price--status">{{priceStatus | currency:'EUR':true}}</div>
       </div>
     </div>
   </div>
