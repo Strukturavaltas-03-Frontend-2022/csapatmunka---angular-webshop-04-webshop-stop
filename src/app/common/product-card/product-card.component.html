@@ -1,22 +1,22 @@
 <div class="customcard">
   <div class="image__container">
-    <img [src]="cardImageUrl" alt="book">
+    <img [src]="oneProduct.image" alt="book">
   </div>
   <div class="card__data">
     <div class="card__top">
-      <div class="card--author">{{cardAuthor}}</div>
-      <div class="card--title h5">{{cardTitle}}</div>
-      <div class="card--description small">{{cardDescription}}
+      <div class="card--author">{{oneProduct.author}}</div>
+      <div class="card--title h5">{{oneProduct.name}}</div>
+      <div class="card--description small">{{oneProduct.description}}
       </div>
     </div>
     <div class="card__bottom">
       <div class="stock">
         <div class="stock--text">{{stockText}}</div>
-        <div class="stock--status">{{stockStatus}} in stock</div>
+        <div class="stock--status">{{oneProduct.stock}} in stock</div>
       </div>
       <div class="price">
         <div class="price--text">{{priceText}}</div>
-        <div class="price--status">{{priceStatus | currency:'EUR':true}}</div>
+        <div class="price--status">{{oneProduct.price | currency:'EUR':true}} </div>
       </div>
     </div>
   </div>
