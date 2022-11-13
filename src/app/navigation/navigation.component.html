@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+<nav id="mainav" class="navbar navbar-expand-lg navbar-dark fixed-top">
   <a
     class="navbar-brand"
     routerLink="/"
@@ -19,10 +19,10 @@
     class="collapse navbar-collapse"
     id="navbarSupportedContent"
   >
-    <ul class="navbar-nav mr-auto">
+    <ul class="clear">
       <li *ngFor="let item of menuItems" class="nav-item">
         <a
-          class="nav-link text-white"
+          class="drop"
           [routerLink]="item.link"
         >{{ item.text }}</a>
       </li>

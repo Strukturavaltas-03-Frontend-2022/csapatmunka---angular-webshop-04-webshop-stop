@@ -1,0 +1,285 @@
+.nospace {
+  padding-left: 800px;
+}
+
+body {
+  background-color: #2a2929;
+}
+
+.row1 {
+  border: solid;
+  border-width: 1px 0;
+}
+
+#topbar {
+  padding: 20px 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+#topbar ul li {
+  display: inline-block;
+  margin-right: 15px;
+  text-align: right;
+}
+
+#pageintro {
+  padding: 200px 0 300px;
+}
+
+#pageintro article,
+#pageintro article p {
+  display: block;
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  color: #a5a6aa;
+  background-color: #1c1d21;
+}
+
+a {
+  color: #fbab45;
+}
+
+a:active,
+a:focus {
+  background: transparent !important;
+}
+
+hr,
+.borderedbox {
+  border-color: #d7d7d7;
+}
+
+.overlay {
+  background-image: url("../assets/img/bg.png");
+  color: #ffffff;
+  position: relative;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overlay::after {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.overlay.light {
+  color: #474747;
+}
+
+.overlay.light::after {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.row1 {
+  border-color: rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 0;
+}
+
+.row2 {
+  color: #474747;
+  background-color: #f4f4f4;
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.6em;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+}
+.overlay::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 18px 10px;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+.clear,
+.group {
+  display: block;
+}
+.clear::before,
+.clear::after,
+.group::before,
+.group::after {
+  display: table;
+  content: "";
+}
+.clear,
+.clear::after,
+.group,
+.group::after {
+  clear: both;
+}
+
+* {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.hoc {
+  display: block;
+  margin: 0 auto;
+}
+
+address,
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 1140px) {
+  .hoc {
+    max-width: 1140px;
+  }
+
+
+  .group .group > *:last-child,
+  .clear .clear > *:last-child,
+  .clear .group > *:last-child,
+  .group .clear > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .hoc {
+    max-width: 1140px;
+  }
+}
+
+@media screen and (min-width: 978px) and (max-width: 1140px) {
+  .hoc {
+    max-width: 95%;
+  }
+}
+
+@media screen and (max-width: 978px) {
+  .hoc {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .imgl,
+  .imgr {
+    display: inline-block;
+    float: none;
+    margin: 0 0 10px 0;
+  }
+  .fl_left,
+  .fl_right {
+    display: block;
+    float: none;
+  }
+  .group .group > *:last-child,
+  .clear .clear > *:last-child,
+  .clear .group > *:last-child,
+  .group .clear > *:last-child {
+    margin-bottom: 0;
+  }
+
+
+  #topbar {
+    text-align: center;
+  }
+  #topbar > div:first-of-type ul {
+    margin: 0 0 10px 0;
+  }
+  #topbar #searchform {
+    display: none;
+  }
+
+  #header {
+    text-align: center;
+  }
+  #header #logo {
+    margin: 0 0 15px 0;
+  }
+
+  #pageintro article,
+  #pageintro article p {
+    max-width: none;
+  }
+  #pageintro .heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #topbar > div:first-of-type ul li {
+    display: block;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .pushright li {
+    margin-right: 0;
+  }
+}
+
+.rgtspace-5::after {
+  content: "_";
+  opacity: 0;
+}
+
+.container {
+  padding: 80px 0;
+}
+
+.container .sidebar nav a {
+  color: inherit;
+  border-color: #d7d7d7;
+}
+.container .sidebar nav a:hover {
+  color: #fbab45;
+}

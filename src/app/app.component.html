@@ -1,8 +1,42 @@
-<app-navigation></app-navigation>
+<div class="bgded overlay">
+  <div class="wrapper row0">
+    <div id="topbar" class="hoc clear">
+      <div class="fl_left">
+        <ul class="nospace">
+          <li><i class="fa fa-phone rgtspace-5"></i>(+36 1) 880-0040</li>
+          <li>
+            <i class="fa fa-envelope rgtspace-5"></i> info@training360.com
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper row1" id="navbar">
+    <header id="header" class="hoc clear">
+        <app-navigation></app-navigation>
+    </header>
+  </div>
+
 <div class="container mt-3">
   <div class="row">
-    <div class="col-12">
+    <div id="pageintro" class="col-12 hoc clear">
       <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+<script>
+  window.onscroll = function () {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      document.getElementById("navbar").style.background = "#4D3626";
+    } else {
+      document.getElementById("navbar").style.background = "none";
+    }
+  }
+</script>
