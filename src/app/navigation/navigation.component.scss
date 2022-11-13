@@ -1,0 +1,173 @@
+nav ul,
+nav ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#mainav .drop::after,
+#mainav li li .drop::after,
+#breadcrumb li a::after,
+.sidebar nav a::after {
+  position: absolute;
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+#mainav {
+  position: sticky;
+}
+
+#mainav ul {
+  text-transform: uppercase;
+}
+
+#mainav ul ul {
+  position: absolute;
+  width: 180px;
+  text-transform: none;
+  z-index: 9999;
+}
+
+#mainav ul ul ul {
+  left: 180px;
+  top: 0;
+}
+
+#mainav li {
+  display: inline-block;
+  position: relative;
+  margin: 0 15px 0 0;
+  padding: 0;
+}
+
+#mainav li:last-child {
+  margin-right: 0;
+}
+
+#mainav li li {
+  width: 100%;
+  margin: 0;
+}
+
+#mainav li a {
+  display: block;
+  padding: 30px 0;
+}
+
+#mainav .drop {
+  padding-left: 15px;
+}
+
+#mainav li li a,
+#mainav li li .drop {
+  display: block;
+  margin: 0;
+  padding: 10px 15px;
+}
+
+
+#mainav li li .drop::after {
+  content: "\f0d7";
+}
+
+#mainav .drop::after {
+  top: 35px;
+  left: 5px;
+}
+
+#mainav li li .drop::after {
+  top: 15px;
+  left: 5px;
+}
+
+#mainav ul ul {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#mainav ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+#mainav form {
+  display: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fbab45;
+}
+
+a:active,
+a:focus {
+  background: transparent !important;
+}
+
+
+#mainav li a {
+  color: inherit;
+}
+
+#mainav .active a,
+#mainav a:hover,
+#mainav li:hover > a {
+  color: #fbab45;
+  background-color: inherit;
+}
+
+#mainav li li a,
+#mainav .active li a {
+  color: #ffffff;
+  background-color: rgba(251, 171, 69, 0.5);
+  border-color: rgba(251, 171, 69, 0.5);
+}
+
+#mainav li li:hover > a,
+#mainav .active .active > a {
+  color: #ffffff;
+  background-color: #fbab45;
+}
+
+#mainav form select {
+  color: #474747;
+  background-color: #ffffff;
+}
+
+.clear,
+.group {
+  display: block;
+}
+.clear::before,
+.clear::after,
+.group::before,
+.group::after {
+  display: table;
+  content: "";
+}
+.clear,
+.clear::after,
+.group,
+.group::after {
+  clear: both;
+}
+
+address,
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
