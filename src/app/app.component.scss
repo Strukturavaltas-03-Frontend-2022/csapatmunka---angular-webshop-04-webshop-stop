@@ -1,11 +1,26 @@
-.nospace {
-  padding-left: 800px;
-}
+
 
 body {
-  background-color: #2a2929;
+  background-image: url("../assets/img/bg.png");
+  color: #a5a6aa;
+  background-color: #1c1d21;
+  color: #ffffff;
+  position: relative;
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.overlay {
+  color: white;
+
+}
 .row1 {
   border: solid;
   border-width: 1px 0;
@@ -14,7 +29,7 @@ body {
 #topbar {
   padding: 20px 0;
   font-size: 0.8rem;
-  text-transform: uppercase;
+  text-transform: lowercase;
   text-align: right;
 }
 
@@ -36,10 +51,6 @@ body {
   text-align: center;
 }
 
-body {
-  color: #a5a6aa;
-  background-color: #1c1d21;
-}
 
 a {
   color: #fbab45;
@@ -116,6 +127,7 @@ body {
   position: relative;
   z-index: 1;
 }
+
 .overlay::after {
   display: block;
   position: absolute;
@@ -145,6 +157,7 @@ body {
   display: table;
   content: "";
 }
+
 .clear,
 .clear::after,
 .group,
