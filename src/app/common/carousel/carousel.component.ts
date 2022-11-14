@@ -19,6 +19,7 @@ export class CarouselComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.productList)
   }
 
   onLeftClick()
