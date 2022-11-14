@@ -10,33 +10,36 @@
         </ul>
       </div>
     </div>
-  </div>
-  <div class="wrapper row1" id="navbar">
-    <header id="header" class="hoc clear">
-        <app-navigation></app-navigation>
-    </header>
-  </div>
 
-<div class="container mt-3">
-  <div class="row">
-    <div id="pageintro" class="col-12 hoc clear">
-      <router-outlet></router-outlet>
+    <div class="wrapper row1" id="navbar">
+      <header id="header" class="hoc clear">
+        <app-navigation></app-navigation>
+      </header>
+    </div>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div id="pageintro" class="col-12 hoc clear">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<script>
-  window.onscroll = function () {
-    scrollFunction();
-  };
 
-  function scrollFunction() {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      document.getElementById("navbar").style.background = "#4D3626";
-    } else {
-      document.getElementById("navbar").style.background = "none";
+  <script>
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        document.getElementById("navbar").style.background = "#4D3626";
+      } else {
+        document.getElementById("navbar").style.background = "none";
+      }
     }
-  }
-</script>
+  </script>
+</div>
