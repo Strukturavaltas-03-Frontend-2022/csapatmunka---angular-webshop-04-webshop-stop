@@ -10,6 +10,7 @@ import { HomeComponent } from './page/home/home.component';
 import { ProductCardComponent } from './common/product-card/product-card.component';
 import { CarouselComponent } from './common/carousel/carousel.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
+import { Cat03Component } from './page/cat03/cat03.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProductListComponent } from './common/product-list/product-list.compone
     HomeComponent,
     ProductCardComponent,
     CarouselComponent,
-    ProductListComponent
+    ProductListComponent,
+    Cat03Component
   ],
   imports: [
     BrowserModule,
