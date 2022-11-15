@@ -1,0 +1,9 @@
+.carousel {
+  display: flex;
+  gap: 1%;
+  width: 100%;
+}
+
+app-product-card {
+  flex-grow: 1;
+}

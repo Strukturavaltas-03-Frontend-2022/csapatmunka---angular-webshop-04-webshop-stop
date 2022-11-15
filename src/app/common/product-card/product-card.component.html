@@ -1,0 +1,27 @@
+<div class="customcard">
+  <div class="image__container">
+    <img [src]="oneProduct.image" alt="book">
+  </div>
+  <div class="card__data">
+    <div class="card__top">
+      <div class="card--author">{{oneProduct.author}}</div>
+      <div class="card--title h5">{{oneProduct.name}}</div>
+      <div class="card--description small">{{oneProduct.description}}
+      </div>
+    </div>
+    <div class="card__bottom">
+      <div class="stock">
+        <div class="stock--text">{{stockText}}</div>
+        <div [ngSwitch]="grammarCase" class="stock-status" [style.color]="stockColor">
+          <div *ngSwitchCase="'plural'">{{oneProduct.stock}} items in stock</div>
+          <div *ngSwitchCase="'singular'">{{oneProduct.stock}} item in stock</div>
+          <div *ngSwitchDefault class="stock--out">Out of stock</div>
+        </div>
+      </div>
+      <div class="price">
+        <div class="price--text">{{priceText}}</div>
+        <div class="price--status">{{oneProduct.price | currency:'EUR':true}} </div>
+      </div>
+    </div>
+  </div>
+</div>

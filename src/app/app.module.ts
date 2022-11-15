@@ -7,6 +7,10 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { Cat01Component } from './page/cat01/cat01.component';
 import { Cat02Component } from './page/cat02/cat02.component';
 import { HomeComponent } from './page/home/home.component';
+import { ProductCardComponent } from './common/product-card/product-card.component';
+import { CarouselComponent } from './common/carousel/carousel.component';
+import { ProductListComponent } from './common/product-list/product-list.component';
+import { Cat03Component } from './page/cat03/cat03.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +18,11 @@ import { HomeComponent } from './page/home/home.component';
     NavigationComponent,
     Cat01Component,
     Cat02Component,
-    HomeComponent
+    HomeComponent,
+    ProductCardComponent,
+    CarouselComponent,
+    ProductListComponent,
+    Cat03Component
   ],
   imports: [
     BrowserModule,
