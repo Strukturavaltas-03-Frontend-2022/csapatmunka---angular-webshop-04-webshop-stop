@@ -18,7 +18,7 @@ export class Product {
       this.name = properties.name || '';
       this.author = properties.author || '';
       this.description = properties.description || '';
-      this.image = properties.image || '';
+      this.image = `/assets/images${properties.image}` || '';
       this.price = properties.price || 0;
       this.stock = properties.stock || 0;
       this.featured = properties.featured || false;
