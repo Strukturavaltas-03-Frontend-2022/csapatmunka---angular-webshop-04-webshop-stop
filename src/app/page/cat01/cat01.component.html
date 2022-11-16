@@ -1,1 +1,10 @@
-<app-product-list [productList]="booklistAll"></app-product-list>
+<div class="col">
+
+    <div class="mb-4">
+        <app-carousel [productList]="booklistCaruselTop" (rightClick)="onCarusRightTop()"
+            (leftClick)="onCarusLeftTop()"></app-carousel>
+    </div>
+
+    <app-product-list [productList]="booklistCat"></app-product-list>
+
+</div>

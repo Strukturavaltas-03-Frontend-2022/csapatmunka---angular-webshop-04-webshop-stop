@@ -8,7 +8,7 @@ export class ProductService {
   list: Product[] = [
     {
       "id": 1,
-      "catId": 3,
+      "catId": 1,
       "name": "Things Fall Apart",
       "author": "Chinua Achebe",
       "description": "https://en.wikipedia.org/wiki/Things_Fall_Apart",
@@ -20,7 +20,7 @@ export class ProductService {
     },
     {
       "id": 2,
-      "catId": 2,
+      "catId": 1,
       "name": "Fairy tales",
       "author": "Hans Christian Andersen",
       "description": "https://en.wikipedia.org/wiki/Fairy_Tales_Told_for_Children._First_Collection.",
@@ -128,19 +128,19 @@ export class ProductService {
     },
     {
       "id": 11,
-      "catId": 2,
+      "catId": 1,
       "name": "The Decameron",
       "author": "Giovanni Boccaccio",
       "description": "https://en.wikipedia.org/wiki/The_Decameron",
       "image": "assets/images/the-decameron.jpg",
       "price": 12.99,
       "stock": 10,
-      "featured": false,
+      "featured": true,
       "active": false
     },
     {
       "id": 12,
-      "catId": 3,
+      "catId": 1,
       "name": "Ficciones",
       "author": "Jorge Luis Borges",
       "description": "https://en.wikipedia.org/wiki/Ficciones",
@@ -152,7 +152,7 @@ export class ProductService {
     },
     {
       "id": 13,
-      "catId": 2,
+      "catId": 1,
       "name": "Wuthering Heights",
       "author": "Emily Brontë",
       "description": "https://en.wikipedia.org/wiki/Wuthering_Heights",
@@ -164,7 +164,7 @@ export class ProductService {
     },
     {
       "id": 14,
-      "catId": 3,
+      "catId": 1,
       "name": "The Stranger",
       "author": "Albert Camus",
       "description": "https://en.wikipedia.org/wiki/The_Stranger_(novel)",
@@ -176,7 +176,7 @@ export class ProductService {
     },
     {
       "id": 15,
-      "catId": 3,
+      "catId": 1,
       "name": "Poems",
       "author": "Paul Celan",
       "description": "",
@@ -236,7 +236,7 @@ export class ProductService {
     },
     {
       "id": 20,
-      "catId": 3,
+      "catId": 1,
       "name": "Nostromo",
       "author": "Joseph Conrad",
       "description": "https://en.wikipedia.org/wiki/Nostromo",
