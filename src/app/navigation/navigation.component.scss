@@ -18,6 +18,7 @@ nav ol {
 
 #mainav {
   position: sticky;
+
 }
 
 #mainav ul {
@@ -123,14 +124,14 @@ a:focus {
 
 #mainav li li a,
 #mainav .active li a {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
   background-color: rgba(251, 171, 69, 0.5);
   border-color: rgba(251, 171, 69, 0.5);
 }
 
 #mainav li li:hover > a,
 #mainav .active .active > a {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.8);
   background-color: #fbab45;
 }
 
@@ -172,3 +173,7 @@ section {
   padding: 0;
 }
 
+.drop .sr-only{
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
