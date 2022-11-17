@@ -13,6 +13,8 @@ import { CarouselComponent } from './common/carousel/carousel.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { Cat03Component } from './page/cat03/cat03.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { AdminComponent } from './page/admin/admin.component';
+import { DataEditorComponent } from './common/data-editor/data-editor.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SearchPipe } from './pipe/search.pipe';
     CarouselComponent,
     ProductListComponent,
     Cat03Component,
-    SearchPipe
+    SearchPipe,
+    AdminComponent,
+    DataEditorComponent
   ],
   imports: [
     BrowserModule,
