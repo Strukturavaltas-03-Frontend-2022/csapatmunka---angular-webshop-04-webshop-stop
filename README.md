@@ -41,21 +41,18 @@ szükséges oszályokat és szolgáltatásokat (service).
 [Mockaroo](https://mockaroo.com)
 
 ## Home component
-Amint látjátok, a fő komponenseket már elkészítettem, és a menüt is beállítottam.
-- Ez a főoldala a webshopnak.
-- Jelenjen meg egy kiemelt terméksor az oldal tetején.  
-> 5 kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyeknek featured tulajdonsága true.
-- Jelenjen meg egy akciós terméksor a kiemelt termékek alatt, ide bármilyen random termék 
-kerülhet, szintén 5 darab legyen.
+## Amint látjátok, a fő komponenseket már elkészítettem, és a menüt is beállítottam.
+## - Ez a főoldala a webshopnak.
+## - Jelenjen meg egy kiemelt terméksor az oldal tetején.  
+## > 5 kiemelt terméket tartalmazzon, azok közül jelenjenek meg, amelyeknek featured tulajdonsága true.
+## - Jelenjen meg egy akciós terméksor a kiemelt termékek alatt, ide bármilyen random termék kerülhet, szintén 5 darab legyen.
 
 ## Category oldalak
-A kategóriaoldalak linkjét a ConfigService-ben tudjátok átnevezni.
-- Jelenjen meg itt is a kiemelt terméksor 5 termékkel, de ezeknek már ebből a kategóriából kell jönnie. 
-Ezek azok a termékek, amelyek az adott kategóriához tartoznak és a featured tulajdonságuk true.
-- Jelenjen meg alatta a terméklista. Itt az összes termék, amely 
-az adott kategóriában található, legyen látható egy rácsrendszerben. Azt, hogy melyik termék melyik kategóriában van, a catId mondja meg.
-- Legyen a terméklista tetején egy szűrőmező. Ez egy input mező, ha gépelni kezdenek bele, akkor 
-a név alapján kezdje el szűrni a termékeket, a legutóbbi feladathoz hasonlóan.
+## A kategóriaoldalak linkjét a ConfigService-ben tudjátok átnevezni.
+## - Jelenjen meg itt is a kiemelt terméksor 5 termékkel, de ezeknek már ebből a kategóriából kell jönnie. 
+## Ezek azok a termékek, amelyek az adott kategóriához tartoznak és a featured tulajdonságuk true.
+## - Jelenjen meg alatta a terméklista. Itt az összes termék, amely az adott kategóriában található, legyen látható egy rácsrendszerben. Azt, hogy melyik termék melyik kategóriában van, a catId mondja meg.
+## - Legyen a terméklista tetején egy szűrőmező. Ez egy input mező, ha gépelni kezdenek bele, akkor a név alapján kezdje el szűrni a termékeket, a legutóbbi feladathoz hasonlóan.
 
 ## Szükséges komponensek
 Ezeket nektek kell legenerálni, például így: `ng g c common/product-card`
@@ -70,24 +67,18 @@ pl.: `<app-product-card [product]="product"></app-product-card>`
 - Statikus komponens, azaz nem kell bele output tulajdonság (egyelőre :))))
 
 ### 2. Terméklapozó komponens
-Az öt terméket jeleníti meg. A főoldalon kettő, a kategóriaoldalakon egy van belőle, 
-csak különböző termékekkel. Tehát ez jeleníti meg a főoldalon a kiemelt és akciós 
-termékeket, a kategóriaoldalakon pedig a kategória kiemelt termékeit.
-- Működése: input tulajdonságként kapja meg az 5 terméket. *ngFor használatával 
-jeleníti meg őket, minden termék egy product-card komponens lesz.
-- Extra: ha valaki nagyon unatkozik, akkor több termék is lehet benne, jobbra-balra 
-lapozó gombokkal.
+## Az öt terméket jeleníti meg. A főoldalon kettő, a kategóriaoldalakon egy van belőle, 
+## csak különböző termékekkel. Tehát ez jeleníti meg a főoldalon a kiemelt és akciós termékeket, a kategóriaoldalakon pedig a kategória kiemelt termékeit.
+## - Működése: input tulajdonságként kapja meg az 5 terméket. *ngFor használatával  jeleníti meg őket, minden termék egy product-card komponens lesz.
+## - Extra: ha valaki nagyon unatkozik, akkor több termék is lehet benne, jobbra-balra lapozó gombokkal.
 
 ### 3. Terméklista komponens
-Ez a komponens hasonlóan működik, mint a terméklapozó, de ez korlátlan számú terméket 
-képes megjeleníteni.
-- Működése: input tulajdonságként kapja meg a termékek tömbjét. Ezeket bejárva (*ngFor) 
-minden terméket egy product-card komponenssel jelenít meg.
-- Szűrés: generáljatok egy filter pipe-ot, és azt alkalmazzátok a szűrésre. 
-> Legyen egy input mező a termékek felett (de ezen a komponensen belül).  
-> Amikor módosítják a tartalmát, akkor módosuljon egy változó, pl.: `phrase`.  
-> Ez a változó legyen átadva a filternek, ami ez alapján szűrje le a 
-kapott termékek tömbjét. Ezt ott tudjátok alkalmazni, ahol az *ngFor 
+## Ez a komponens hasonlóan működik, mint a terméklapozó, de ez korlátlan számú terméket képes megjeleníteni.
+## - Működése: input tulajdonságként kapja meg a termékek tömbjét. Ezeket bejárva (*ngFor) minden terméket egy product-card komponenssel jelenít meg.
+## - Szűrés: generáljatok egy filter pipe-ot, és azt alkalmazzátok a szűrésre. 
+## > Legyen egy input mező a termékek felett (de ezen a komponensen belül).  
+## > Amikor módosítják a tartalmát, akkor módosuljon egy változó, pl.: `phrase`.  
+## > Ez a változó legyen átadva a filternek, ami ez alapján szűrje le a kapott termékek tömbjét. Ezt ott tudjátok alkalmazni, ahol az *ngFor 
 bejárja a termékeket, pl.:  
 ```html
 <tr *ngFor="let product of products | filter:phrase">
@@ -96,9 +87,9 @@ bejárja a termékeket, pl.:
 
 ## Megjelenés
 A Bootstrap keretrendszert és a Font Awesome-ikonokat előre telepítettem és beállítottam. 
-- Írjatok egyéni SCSS-állományokat igény szerint, alakítsátok a színeket és a megjelenést 
+ - Írjatok egyéni SCSS-állományokat igény szerint, alakítsátok a színeket és a megjelenést 
 a saját ízlésetek alapján. 
-- RESZPONZIVITÁS: mobil nézetben 1, tablet nézetben 2 és asztali nézetben 5 termék 
+## - RESZPONZIVITÁS: mobil nézetben 1, tablet nézetben 2 és asztali nézetben 5 termék 
 jelenjen meg egymás mellett. A menüt már megoldottam.
 - Termékek képei: a képeket az `app/assets` mappába helyezzétek el. Ez egy 
 speciális mappa, a webpack átmásolja a kész alkalmazásba. Ha, mondjuk, 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetrandomService } from 'src/app/service/getrandom.service';
 import { Product } from '../../model/classes/product';
 import {ProductService} from '../../service/product.service';
 
@@ -10,23 +11,41 @@ import {ProductService} from '../../service/product.service';
 export class HomeComponent implements OnInit {
 
   booklistAll:Product[]=this.productService.list;
-  booklistCarusel:Product[]=[]
+  booklistCaruselTop:Product[]=[]
+  booklistCaruselBottom:Product[]=[]
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+              private gt:GetrandomService) { }
 
   ngOnInit(): void {
-    this.booklistCarusel=this.booklistAll.slice(0,5)
+    this.booklistCaruselTop=this.gt.getRandom(this.booklistAll.filter(item=>item.featured),5)
+    this.booklistCaruselBottom=this.gt.getRandom(this.booklistAll,5)
     //console.log(this.booklistCarusel)
   }
 
-  onCarusRight():void{
+  onCarusRightTop():void{
     console.log('rihgt')
-    this.booklistCarusel=this.booklistAll.slice(4,9)
+    this.booklistCaruselTop=this.gt.getRandom(this.booklistAll.filter(item=>item.featured),5)
 
   }
 
-  onCarusLeft():void{
+  onCarusLeftTop():void{
     console.log('left')
+    this.booklistCaruselTop=this.gt.getRandom(this.booklistAll.filter(item=>item.featured),5)
   }
+
+  onCarusRightBottom():void{
+    //onsole.log('rihgt')
+    this.booklistCaruselBottom=this.gt.getRandom(this.booklistAll,5)
+
+  }
+
+  onCarusLeftBottom():void{
+    //console.log('left')
+    this.booklistCaruselBottom=this.gt.getRandom(this.booklistAll,5)
+  }
+
+
+
 
 }

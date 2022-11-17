@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { ProductCardComponent } from './common/product-card/product-card.compone
 import { CarouselComponent } from './common/carousel/carousel.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { Cat03Component } from './page/cat03/cat03.component';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { Cat03Component } from './page/cat03/cat03.component';
     ProductCardComponent,
     CarouselComponent,
     ProductListComponent,
-    Cat03Component
+    Cat03Component,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
