@@ -18,6 +18,7 @@ export class ConfigService {
     { text: 'Ancient', link: '/cat01' },
     { text: 'Classic', link: '/cat02' },
     { text: 'Modern', link: '/cat03' },
+    { text: 'Admin', link: '/admin' },
 
   ];
 
