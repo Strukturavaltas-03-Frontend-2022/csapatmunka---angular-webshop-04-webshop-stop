@@ -29,6 +29,7 @@ export class AppComponent {
 
 
   ngOnInit(): void {
+
     //console.log(this.booklistAll[0])
     // this.booklistCarusel=this.booklistAll.slice(0,5)
     // console.log(this.booklistCarusel)
