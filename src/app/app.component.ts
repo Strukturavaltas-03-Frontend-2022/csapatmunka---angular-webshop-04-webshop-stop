@@ -1,6 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Product } from './model/classes/product';
-import {ProductService} from './service/product.service';
+import { ProductService } from './service/product.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,12 @@ import {ProductService} from './service/product.service';
 })
 export class AppComponent {
   title = 'str-angular-project001';
-  booklistAll:Product[]=this.productService.list;
- // booklistCarusel:Product[]=[]
+  booklistAll: Product[] = this.productService.list;
+  // booklistCarusel:Product[]=[]
 
   constructor(
     private productService: ProductService
-  ) {}
+  ) { }
 
   @HostListener('window:scroll', ['$event'])
 
@@ -30,8 +30,8 @@ export class AppComponent {
 
   ngOnInit(): void {
     //console.log(this.booklistAll[0])
-   // this.booklistCarusel=this.booklistAll.slice(0,5)
-   // console.log(this.booklistCarusel)
+    // this.booklistCarusel=this.booklistAll.slice(0,5)
+    // console.log(this.booklistCarusel)
   }
 
 }
