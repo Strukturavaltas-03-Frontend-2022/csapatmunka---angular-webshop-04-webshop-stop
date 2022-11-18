@@ -30,7 +30,7 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
     Cat03Component,
     SearchPipe,
     AdminComponent,
-    DataEditorComponent
+    DataEditorComponent,
   ],
   imports: [
     BrowserModule,

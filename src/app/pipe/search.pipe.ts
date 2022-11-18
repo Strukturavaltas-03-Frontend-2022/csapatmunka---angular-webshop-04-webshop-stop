@@ -4,7 +4,8 @@ import { Product } from '../model/classes/product';
 @Pipe({
   name: 'search'
 })
-export class SearchPipe implements PipeTransform {
+export class SearchPipe<T extends { [x: string]: any }> implements PipeTransform {
+  booksInCategory: Product[] = [];
 
 transform(booklist:Product[],phrase:string='',key:string='name'): Product[] {
     
@@ -15,5 +16,4 @@ transform(booklist:Product[],phrase:string='',key:string='name'): Product[] {
     phrase=phrase.toLowerCase()  
     return booklist.filter(item=>String(item[key]).toLowerCase().includes(phrase))
   }
-
 }
