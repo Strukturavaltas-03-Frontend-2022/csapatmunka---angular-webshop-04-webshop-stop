@@ -2,7 +2,7 @@
 <div style="margin: 0 55px 0 55px">
   <div class="row col-12 d-flex justify-content-between">
     <div class="productcard mb-4"
-      *ngFor="let product of productList | async | search:searchPhrase:'name':categoryNumber">
+      *ngFor="let product of productList | async | searchInCategory:searchPhrase:'name':categoryNumber">
       <app-product-card [oneProduct]="product"></app-product-card>
     </div>
   </div>
