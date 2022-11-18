@@ -17,7 +17,6 @@ export class ProductCardComponent implements OnInit {
 
   @Input() cardDescription: string = `An even longer text, because that's how descriptions are.`
 
-
   constructor() { }
 
   ngOnInit(): void {
