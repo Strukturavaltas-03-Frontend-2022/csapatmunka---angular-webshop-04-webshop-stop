@@ -1,4 +1,5 @@
 export class Product {
+  [x: string]: any;
 
   id: number = 0;
   catId: number = 0;

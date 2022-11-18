@@ -4,17 +4,17 @@ import { Product } from '../model/classes/product';
 @Pipe({
   name: 'search'
 })
-export class SearchPipe implements PipeTransform {
+export class SearchPipe<T extends { [x: string]: any }> implements PipeTransform {
+  booksInCategory: Product[] = [];
 
-  transform(booklist: Product[], phrase: string = ''): Product[] {
+  transform(value: Product[], phrase: string = '', key: string = '', category: number): Product[] {
+    if (!Array.isArray(value) || !phrase || !key || !category) {
+      return this.booksInCategory = value.filter(item => item.catId == category);
+    }
 
-    if (!phrase)
-      return booklist
-
+    this.booksInCategory = value.filter(item => item.catId == category)
 
     phrase = phrase.toLowerCase()
-    return booklist.filter(item => item.name.toLowerCase().includes(phrase))
-
+    return this.booksInCategory.filter(item => item[key].toLowerCase().includes(phrase))
   }
-
 }
