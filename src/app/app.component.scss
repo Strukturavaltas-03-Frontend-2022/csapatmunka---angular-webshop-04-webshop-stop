@@ -425,3 +425,49 @@ section {
 .block span a {
   color: #fbab45;
 }
+
+
+.container2 {
+  margin: 4rem;
+}
+
+.wrapper {
+  z-index: 1;
+}
+.navbar-inverse {
+  background-image: url("../assets/img/bg.png");
+  color: rgba(255, 255, 255, 0.8);
+
+  background-color: inherit;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.navbar-inverse::after {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar-inverse.light {
+  color: #474747;
+}
+
+.navbar-inverse.light::after {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.navbar-inverse::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -1;
+}
