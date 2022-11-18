@@ -6,7 +6,7 @@ import { Product } from '../model/classes/product';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(booklist:Product[],phrase:string='',key:string='name'): Product[] {
+transform(booklist:Product[],phrase:string='',key:string='name'): Product[] {
     
     if(!phrase)
       return booklist
@@ -14,7 +14,6 @@ export class SearchPipe implements PipeTransform {
     
     phrase=phrase.toLowerCase()  
     return booklist.filter(item=>String(item[key]).toLowerCase().includes(phrase))
-      
   }
 
 }
