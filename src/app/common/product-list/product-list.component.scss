@@ -1,0 +1,26 @@
+* { box-sizing:border-box
+}
+
+.productcard {
+  padding: 30px;
+}
+
+
+@media (max-width: 767.98px) {
+  .productcard {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .productcard {
+    width: 50%;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .productcard {
+    width: 20%;
+  }
+}

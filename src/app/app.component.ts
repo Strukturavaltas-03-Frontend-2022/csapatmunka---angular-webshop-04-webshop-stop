@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Product } from './model/classes/product';
 import {ProductService} from './service/product.service';
 
@@ -15,6 +15,17 @@ export class AppComponent {
   constructor(
     private productService: ProductService
   ) {}
+
+  @HostListener('window:scroll', ['$event'])
+
+  onWindowScroll(): void {
+    let element = document.querySelector('#navbar') as HTMLElement;
+    if (window.pageYOffset > element.clientHeight) {
+      element.classList.add('navbar-inverse');
+    } else {
+      element.classList.remove('navbar-inverse');
+    }
+  }
 
 
   ngOnInit(): void {
