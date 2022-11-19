@@ -5,9 +5,6 @@ nav ol {
   list-style: none;
 }
 
-
-
-
 #mainav .drop::after,
 #mainav li li .drop::after,
 #breadcrumb li a::after,
@@ -21,7 +18,6 @@ nav ol {
 
 #mainav {
   position: sticky;
-
 }
 
 #mainav ul {
@@ -92,7 +88,7 @@ nav ol {
   opacity: 0;
 }
 
-#mainav ul li:hover > ul {
+#mainav ul li:hover>ul {
   visibility: visible;
   opacity: 1;
 }
@@ -120,7 +116,7 @@ a:focus {
 
 #mainav .active a,
 #mainav a:hover,
-#mainav li:hover > a {
+#mainav li:hover>a {
   color: #fbab45;
   background-color: inherit;
 }
@@ -132,8 +128,8 @@ a:focus {
   border-color: rgba(251, 171, 69, 0.5);
 }
 
-#mainav li li:hover > a,
-#mainav .active .active > a {
+#mainav li li:hover>a,
+#mainav .active .active>a {
   color: rgba(255, 255, 255, 0.8);
   background-color: #fbab45;
 }
@@ -147,6 +143,7 @@ a:focus {
 .group {
   display: block;
 }
+
 .clear::before,
 .clear::after,
 .group::before,
@@ -154,6 +151,7 @@ a:focus {
   display: table;
   content: "";
 }
+
 .clear,
 .clear::after,
 .group,
@@ -176,7 +174,7 @@ section {
   padding: 0;
 }
 
-.drop .sr-only{
+.drop .sr-only {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.8);
 }

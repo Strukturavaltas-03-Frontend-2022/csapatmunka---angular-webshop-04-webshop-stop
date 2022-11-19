@@ -35,7 +35,7 @@ body {
 }
 
 #topbar {
-  padding: 20px 0;
+  padding: 0;
   font-size: 0.8rem;
   text-transform: lowercase;
   text-align: right;
@@ -48,7 +48,7 @@ body {
 }
 
 #pageintro {
-  padding: 10px 0 300px;
+  padding: 10px 0 50px;
 }
 
 #pageintro article,
@@ -239,6 +239,7 @@ section {
 
 .footer__jump a:hover {
   color: rgba(255, 255, 255, 1);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1140px) {
@@ -480,6 +481,7 @@ section {
 .faico a:hover {
   color: #ffffff;
 }
+
 .faicon-dribble:hover {
   background-color: #ea4c89;
 }

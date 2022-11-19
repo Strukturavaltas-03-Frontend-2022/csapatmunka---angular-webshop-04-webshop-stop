@@ -1,18 +1,14 @@
-<nav id="mainav" class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <a class="navbar-brand drop" routerLink="/"
-  >{{ appName | uppercase }}</a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav id="mainav" class="navbar navbar-expand-lg navbar-dark fixed-top my-2">
+  <a class="navbar-brand drop" routerLink="/">{{ appName | uppercase }}</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse menu-button" id="navbarNav">
     <ul class="clear menu navbar-nav">
       <li *ngFor="let item of menuItems" class="nav-item">
-        <a
-          class="drop nav-link"
-          [routerLink]="item.link"
-        >{{ item.text }}<span class="sr-only">(current)</span></a>
+        <a class="drop nav-link" [routerLink]="item.link">{{ item.text }}<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </nav>
-
