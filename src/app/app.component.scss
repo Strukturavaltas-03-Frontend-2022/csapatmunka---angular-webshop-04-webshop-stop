@@ -28,6 +28,7 @@ body {
 .overlay {
   color: rgba(255, 255, 255, 0.8);
 }
+
 .row1 {
   border: solid;
   border-width: 1px 0;
@@ -115,6 +116,7 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 html,
 body {
   margin: 0;
@@ -187,15 +189,67 @@ section {
   padding: 0;
 }
 
+.footer__details {
+  margin: 0;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.footer__details--segment {
+  padding-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.footer__details--left,
+.footer__details--right {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.segment__icon a {
+  color: #fbab45 !important;
+}
+
+.segment__icon {
+  font-size: 1.5rem;
+  color: #fbab45;
+  line-height: 0;
+}
+
+.segment__header {
+  text-transform: capitalize;
+  line-height: 1.5rem;
+}
+
+.segment__text {
+  line-height: 1.75rem;
+}
+
+.segment__text a,
+.segment__text a:hover {
+  color: #fbab45;
+}
+
+.footer__jump,
+.footer__jump a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer__jump a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
 @media screen and (min-width: 1140px) {
   .hoc {
     max-width: 1140px;
   }
 
-  .group .group > *:last-child,
-  .clear .clear > *:last-child,
-  .clear .group > *:last-child,
-  .group .clear > *:last-child {
+  .group .group>*:last-child,
+  .clear .clear>*:last-child,
+  .clear .group>*:last-child,
+  .group .clear>*:last-child {
     margin-bottom: 0;
   }
 }
@@ -204,6 +258,13 @@ section {
   .hoc {
     max-width: 1140px;
   }
+
+  .footer__details--left,
+  .footer__details--right {
+    flex-direction: row;
+  }
+
+
 }
 
 @media screen and (min-width: 978px) and (max-width: 1140px) {
@@ -219,23 +280,27 @@ section {
 }
 
 @media screen and (min-width: 750px) {
+
   .imgl,
   .imgr {
     display: inline-block;
     float: none;
     margin: 0 0 10px 0;
   }
+
   .fl_left,
   .fl_right {
     display: block;
     float: none;
   }
-  .group .group > *:last-child,
-  .clear .clear > *:last-child,
-  .clear .group > *:last-child,
-  .group .clear > *:last-child {
+
+  .group .group>*:last-child,
+  .clear .clear>*:last-child,
+  .clear .group>*:last-child,
+  .group .clear>*:last-child {
     margin-bottom: 0;
   }
+
   .one_half,
   .one_third,
   .two_third,
@@ -249,16 +314,19 @@ section {
     color: rgba(255, 255, 255, 0.8);
   }
 
-  .strong, .heading{
+  .strong,
+  .heading {
     color: rgba(255, 255, 255, 0.8);
   }
 
   #topbar {
     text-align: end;
   }
-  #topbar > div:first-of-type ul {
+
+  #topbar>div:first-of-type ul {
     margin: 0 0 10px 0;
   }
+
   #topbar #searchform {
     display: none;
   }
@@ -266,6 +334,7 @@ section {
   #header {
     text-align: center;
   }
+
   #header #logo {
     margin: 0 0 15px 0;
   }
@@ -274,13 +343,20 @@ section {
   #pageintro article p {
     max-width: none;
   }
+
   #pageintro .heading {
     font-size: 2rem;
   }
+
+  .footer__details {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
 }
 
 @media screen and (max-width: 450px) {
-  #topbar > div:first-of-type ul li {
+  #topbar>div:first-of-type ul li {
     display: block;
     margin: 0;
   }
@@ -305,6 +381,7 @@ section {
   color: inherit;
   border-color: #d7d7d7;
 }
+
 .container .sidebar nav a:hover {
   color: #fbab45;
 }
@@ -323,7 +400,6 @@ section {
 
 
 #footer #ctdetails {
-  padding-top: 30px;
   border-top: 1px solid;
 }
 
@@ -348,6 +424,7 @@ section {
 #footer #ctdetails ul li div span {
   display: block;
 }
+
 #footer #ctdetails ul li div strong {
   display: block;
   margin: 0 0 8px 0;
@@ -372,6 +449,7 @@ section {
   list-style: none;
 
 }
+
 .faico li {
   display: inline-block;
   margin: 8px 5px 0 0;
@@ -379,6 +457,7 @@ section {
   line-height: normal;
 
 }
+
 .faico li:last-child {
   margin-right: 0;
 }
@@ -404,12 +483,15 @@ section {
 .faicon-dribble:hover {
   background-color: #ea4c89;
 }
+
 .faicon-facebook:hover {
   background-color: #3b5998;
 }
+
 .faicon-linkedin:hover {
   background-color: #0e76a8;
 }
+
 .faicon-twitter:hover {
   background-color: #00acee;
 }
@@ -426,6 +508,7 @@ section {
 .wrapper {
   z-index: 1;
 }
+
 .navbar-inverse {
   background-image: url("../assets/img/bg.png");
   color: rgba(255, 255, 255, 0.8);
@@ -441,6 +524,7 @@ section {
   margin-right: auto;
 
 }
+
 .navbar-inverse::after {
   color: inherit;
   background-color: rgba(0, 0, 0, 0.7);
@@ -453,6 +537,7 @@ section {
 .navbar-inverse.light::after {
   background-color: rgba(255, 255, 255, 0.7);
 }
+
 .navbar-inverse::after {
   display: block;
   position: absolute;
