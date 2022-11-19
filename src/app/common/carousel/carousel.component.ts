@@ -9,12 +9,12 @@ import { Product } from 'src/app/model/classes/product';
 })
 export class CarouselComponent implements OnInit {
 
-  @Output() leftClick:EventEmitter<boolean>=new EventEmitter();
-  @Output() rightClick:EventEmitter<boolean>=new EventEmitter();
+  @Output() leftClick: EventEmitter<boolean> = new EventEmitter();
+  @Output() rightClick: EventEmitter<boolean> = new EventEmitter();
 
-  @Input()  productList:Product[]=[]
+  @Input() productList: Product[] = []
 
-  test_array:string[]=['a','b','c','d','e'];
+  test_array: string[] = ['a', 'b', 'c', 'd', 'e'];
 
   constructor() { }
 
@@ -22,16 +22,14 @@ export class CarouselComponent implements OnInit {
     //console.log(this.productList)
   }
 
-  onLeftClick()
-  {
+  onLeftClick() {
     this.leftClick.emit(true);
     //console.log('left')
   }
 
-  onRightClick()
-  {
+  onRightClick() {
     this.rightClick.emit(true);
-   // console.log('right')
+    // console.log('right')
   }
 
 }
