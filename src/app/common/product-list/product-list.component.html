@@ -1,7 +1,27 @@
-<input [(ngModel)]="searchPhrase" type="text" class="form-control" />
-<div style="margin: 0 55px 0 55px">
+<div class="container col-11 py-2">
+
+  <div class="row d-flex">
+    <label class="mx-3" for="listFilter">Filter books</label>
+  <div class="listFilterInput">
+      <input [(ngModel)]="searchPhrase" type="text" class="form-control"
+      id="listFilter" />
+    </div>
+  <label class="mx-3" for="propertySelect">by</label>
+  <div class="form-group">
+    <select [(ngModel)]="searchProperty" class="form-control" id="propertySelect">
+      <option value="author">author</option>
+      <option value="name">name</option>
+      <option value="description">description</option>
+    </select>
+  </div>
+</div>
+</div>
+
+
+
+<div class="container col-11">
   <div class="row col-12 d-flex justify-content-start flex-wrap">
-    <div class="productcard mb-4" *ngFor="let product of productList | search:searchPhrase:'name'">
+    <div class="productcard mb-4" *ngFor="let product of productList | search:searchPhrase:searchProperty">
       <app-product-card [oneProduct]="product"></app-product-card>
     </div>
   </div>
