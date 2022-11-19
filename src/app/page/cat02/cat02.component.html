@@ -1,10 +1,19 @@
-<div class="col">
-
-    <div class="mb-4">
-        <app-carousel [productList]="booklistCaruselTop" (rightClick)="onCarusRightTop()"
-            (leftClick)="onCarusLeftTop()"></app-carousel>
-    </div>
-
-    <app-product-list [productList]="booklistCat"></app-product-list>
-
+<div class="col d-flex align-items-center flex-column">
+    <section class="segment__top mt-3 col-md-10">
+        <div class="title title__top mb-3">
+            <h2>Featured classic items:</h2>
+        </div>
+        <div class="carousel__container mb-4">
+            <app-carousel [productList]="booklistCaruselTop" (rightClick)="onCarusRightTop()"
+                (leftClick)="onCarusLeftTop()"></app-carousel>
+        </div>
+    </section>
+    <section class="segment__bottom mt-3 col-md-10">
+        <div class="title title__bottom mb-3">
+            <h2>All classic items:</h2>
+        </div>
+        <div class="list__container mb-4">
+            <app-product-list [productList]="booklistCat"></app-product-list>
+        </div>
+    </section>
 </div>
