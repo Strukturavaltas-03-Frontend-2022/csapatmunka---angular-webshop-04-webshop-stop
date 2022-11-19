@@ -1,9 +1,17 @@
-* { box-sizing:border-box
+* {
+  box-sizing: border-box;
+}
+
+.productlist__container {
+  margin: 0 !important;
+  padding: 0;
+  width: 100%;
 }
 
 .productcard {
-  padding: 30px;
+  padding: 10px 20px;
 }
+
 
 
 @media (max-width: 767.98px) {
@@ -18,8 +26,14 @@
   }
 }
 
+@media (min-width: 991.98px) and (max-width: 1330px) {
+  .productcard {
+    width: 33%;
+  }
+}
 
-@media (min-width: 992px) {
+
+@media (min-width: 1330px) {
   .productcard {
     width: 20%;
   }

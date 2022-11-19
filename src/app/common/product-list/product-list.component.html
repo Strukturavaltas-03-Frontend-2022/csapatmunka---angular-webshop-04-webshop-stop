@@ -1,7 +1,7 @@
 <input [(ngModel)]="searchPhrase" type="text" class="form-control" />
-<div style="margin: 0 55px 0 55px">
-  <div class="row col-12 d-flex justify-content-start flex-wrap">
-    <div class="productcard mb-4" *ngFor="let product of productList | search:searchPhrase:'name'">
+<div class="mt-4">
+  <div class="productlist__container row col-12 d-flex justify-content-start flex-wrap mx-auto">
+    <div class="productcard" *ngFor="let product of productList | search:searchPhrase:'name'">
       <app-product-card [oneProduct]="product"></app-product-card>
     </div>
   </div>
