@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/model/classes/product';
 import { ProductService } from 'src/app/service/product.service';
@@ -8,16 +8,13 @@ class EditableProduct extends Product {
   editable?: boolean = false;
 }
 
-
-
-
 @Component({
   selector: 'app-data-editor',
   templateUrl: './data-editor.component.html',
   styleUrls: ['./data-editor.component.scss']
 })
 export class DataEditorComponent implements OnInit {
-  booklistAll: EditableProduct[] = this.productService.list;
+  booklistAll: EditableProduct[] = []
   product: Product = new Product
 
   searchRow = {
@@ -34,22 +31,16 @@ export class DataEditorComponent implements OnInit {
 
   }
 
-
-
-
   constructor(
     private productService: ProductService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
+    this.productService.getAll().subscribe(data => {
+      this.booklistAll=data
+    })
   }
-
-  /*onUpdate(product: Product): void {
-    this.productService.update(product).subscribe(
-      product => this.router.navigate(['/','admin']),
-    );
-  }*/
 
   onEditClick(book: EditableProduct) {
    // console.log(book)
@@ -62,17 +53,23 @@ export class DataEditorComponent implements OnInit {
   }
 
   onDeleteClick(book: Product) {
-    console.log(book)
+    this.productService.delete(book).subscribe(() => console.log("user deleted"))
+    this.productService.getAll().subscribe(data => {
+      this.booklistAll=data
+    })
   }
 
-  onSaveClick(book: Product) {
-    console.log(book)
+  onSaveClick(book: EditableProduct) {
+    book.editable = false
+    this.productService.update(book as Product).subscribe(() => console.log("user updated"))
+    this.productService.getAll().subscribe(data => {
+      this.booklistAll=data
+    })
   }
 
   onSearchType(key: string) {
     //console.log(this.searchRow)
   }
-
 
   clearFilters(): void {
 
