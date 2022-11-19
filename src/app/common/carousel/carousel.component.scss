@@ -8,12 +8,29 @@ app-product-card {
   flex-grow: 1;
 }
 
-* { box-sizing:border-box
+* {
+  box-sizing: border-box
 }
 
 .productcard {
   padding: 30px;
 }
+
+button {
+  background-color: transparent;
+  border: 0;
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+  color: rgba($color: #ffffff, $alpha: 0.7);
+}
+
+.fa-chevron-left:hover,
+.fa-chevron-right:hover {
+  color: white
+}
+
 
 
 @media (max-width: 767.98px) {

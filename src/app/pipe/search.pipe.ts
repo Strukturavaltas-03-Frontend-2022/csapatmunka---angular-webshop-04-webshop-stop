@@ -5,7 +5,6 @@ import { Product } from '../model/classes/product';
   name: 'search'
 })
 export class SearchPipe<T extends { [x: string]: any }> implements PipeTransform {
-  booksInCategory: Product[] = [];
 
   transform(booklist: Product[], phrase: string = '', key: string = 'name'): Product[] {
 

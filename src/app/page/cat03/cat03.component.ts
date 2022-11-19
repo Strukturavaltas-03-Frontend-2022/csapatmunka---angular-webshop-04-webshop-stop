@@ -9,29 +9,29 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./cat03.component.scss']
 })
 export class Cat03Component implements OnInit {
-  booklistAll:Product[]=this.productService.list;
-  booklistCat:Product[]=[]
-  booklistCaruselTop:Product[]=[]
-  category:number=3
+  booklistCat: Product[] = []
+  booklistCaruselTop: Product[] = []
+  category: number = 3
 
   constructor(private productService: ProductService,
-              private gt:GetrandomService) { }
+    private gt: GetrandomService) { }
 
   ngOnInit(): void {
-    this.booklistCaruselTop=this.gt.getRandom(this.booklistAll.filter(item=>(item.featured)&&(item.catId==this.category)),5)
-    this.booklistCat=this.booklistAll.filter(item=>(item.catId==this.category))
+    this.productService.getAll().subscribe(data => {
+      this.booklistCaruselTop = this.gt.getRandom(data.filter(item => (item.featured) && (item.catId == this.category)), 5)
+      this.booklistCat = data.filter(item => (item.catId == this.category))
+    })
   }
 
-  onCarusRightTop():void{
-    console.log('rihgt')
-    this.booklistCaruselTop=this.gt.getRandom(this.booklistAll.filter(item=>(item.featured)&&(item.catId==this.category)),5)
-
+  onCarusRightTop(): void {
+    this.productService.getAll().subscribe(data => {
+      this.booklistCaruselTop = this.gt.getRandom(data.filter(item => (item.featured) && (item.catId == this.category)), 5)
+    })
   }
 
-  onCarusLeftTop():void{
-    console.log('left')
-    this.booklistCaruselTop=this.gt.getRandom(this.booklistAll.filter(item=>(item.featured)&&(item.catId==this.category)),5)
+  onCarusLeftTop(): void {
+    this.productService.getAll().subscribe(data => {
+      this.booklistCaruselTop = this.gt.getRandom(data.filter(item => (item.featured) && (item.catId == this.category)), 5)
+    })
   }
-
-
 }
