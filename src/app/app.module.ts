@@ -16,6 +16,8 @@ import { Cat03Component } from './page/cat03/cat03.component';
 import { SearchPipe } from './pipe/search.pipe';
 import { AdminComponent } from './page/admin/admin.component';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
+import { SortPipe } from './pipe/sort.pipe';
+import { AscendPipe } from './pipe/ascend.pipe';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { DataEditorComponent } from './common/data-editor/data-editor.component'
     SearchPipe,
     AdminComponent,
     DataEditorComponent,
+    SortPipe,
+    AscendPipe
   ],
   imports: [
     BrowserModule,
