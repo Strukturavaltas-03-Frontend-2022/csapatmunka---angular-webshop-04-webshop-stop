@@ -31,6 +31,9 @@ export class DataEditorComponent implements OnInit {
 
   }
 
+  @Input() pageSize: number = 10;
+  currentPage: number = 1;
+
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -38,12 +41,25 @@ export class DataEditorComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAll().subscribe(data => {
-      this.booklistAll=data
+      this.booklistAll = data
     })
   }
 
+  getPageNumbers(): number[] {
+    const pageCount: number = Math.ceil(this.booklistAll.length / this.pageSize)
+    let nums: number[] = [];
+    for (let i = 0; i < pageCount; i++) {
+      nums[i] = i + 1
+    }
+    return nums
+  }
+
+  jumpToPage(pageNum: number): void {
+    this.currentPage = pageNum
+  }
+
   onEditClick(book: EditableProduct) {
-   // console.log(book)
+    // console.log(book)
     if (book.editable) {
       book.editable = false
     }
@@ -55,7 +71,7 @@ export class DataEditorComponent implements OnInit {
   onDeleteClick(book: Product) {
     this.productService.delete(book).subscribe(() => console.log("user deleted"))
     this.productService.getAll().subscribe(data => {
-      this.booklistAll=data
+      this.booklistAll = data
     })
   }
 
@@ -63,7 +79,7 @@ export class DataEditorComponent implements OnInit {
     book.editable = false
     this.productService.update(book as Product).subscribe(() => console.log("user updated"))
     this.productService.getAll().subscribe(data => {
-      this.booklistAll=data
+      this.booklistAll = data
     })
   }
 
