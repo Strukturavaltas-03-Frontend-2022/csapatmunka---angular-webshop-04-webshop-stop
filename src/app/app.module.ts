@@ -17,7 +17,7 @@ import { SearchPipe } from './pipe/search.pipe';
 import { AdminComponent } from './page/admin/admin.component';
 import { DataEditorComponent } from './common/data-editor/data-editor.component';
 import { SortPipe } from './pipe/sort.pipe';
-import { AscendPipe } from './pipe/ascend.pipe';
+import { ReversePipe } from './pipe/reverse.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,7 @@ import { AscendPipe } from './pipe/ascend.pipe';
     AdminComponent,
     DataEditorComponent,
     SortPipe,
-    AscendPipe
+    ReversePipe
   ],
   imports: [
     BrowserModule,

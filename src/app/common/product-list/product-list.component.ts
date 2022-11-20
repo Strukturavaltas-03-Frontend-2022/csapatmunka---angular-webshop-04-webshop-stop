@@ -13,10 +13,18 @@ export class ProductListComponent implements OnInit {
 
   searchPhrase: string = ''
   searchProperty: string = 'author'
+  currentSortOrder: string = "Ascending";
+
+  reverseList: Boolean = true;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+  }
+
+  onReverseList(): void {
+    this.reverseList ? this.reverseList = false : this.reverseList = true
+    this.currentSortOrder == 'Ascending' ? this.currentSortOrder = 'Descending' : this.currentSortOrder = 'Ascending'
   }
 
 }
