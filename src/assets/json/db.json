@@ -59,7 +59,8 @@
       "price": 15.99,
       "stock": 11,
       "featured": false,
-      "active": false
+      "active": false,
+      "editable": false
     },
     {
       "id": 17,
@@ -71,7 +72,8 @@
       "price": 9.99,
       "stock": 7,
       "featured": true,
-      "active": false
+      "active": false,
+      "editable": false
     },
     {
       "id": 18,
