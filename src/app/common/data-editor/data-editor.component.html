@@ -63,10 +63,17 @@
 <div class="row">
     <div class="col-12 d-flex justify-content-center">
         <nav aria-label="Page navigation example">
-            <ul class="pagination">
+            <ul class="pagination" *ngIf="canWeJumpPages">
                 <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
                 <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
                     <a (click)="jumpToPage(pageNumber)" class="page-link">{{pageNumber}}</a>
+                </li>
+                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
+            </ul>
+            <ul class="pagination" *ngIf="!canWeJumpPages">
+                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
+                <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
+                    <a class="page-link">{{pageNumber}}</a>
                 </li>
                 <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
             </ul>
@@ -118,8 +125,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let book of booklistAll |slice:((currentPage-1)*pageSize):(currentPage*pageSize)
-                                                    |search:searchRow.id:'id'
+                <tr *ngFor="let book of booklistAll |search:searchRow.id:'id'
                                                     |search:searchRow.catId:'catId'
                                                     |search:searchRow.name:'name'
                                                     |search:searchRow.author:'author'
@@ -128,7 +134,9 @@
                                                     |search:searchRow.price:'price' 
                                                     |search:searchRow.stock:'stock' 
                                                     |search:searchRow.featured:'featured'
-                                                    |search:searchRow.active:'active'">
+                                                    |search:searchRow.active:'active'
+                                                    
+                                                    ">
                     <ng-container *ngIf="!book.editable">
                         <td>{{ book.id }}</td>
                         <td>{{ book.catId }}</td>
@@ -184,10 +192,17 @@
 <div class="row">
     <div class="col-12 d-flex justify-content-center">
         <nav aria-label="Page navigation example">
-            <ul class="pagination">
+            <ul class="pagination" *ngIf="canWeJumpPages">
                 <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
                 <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
                     <a (click)="jumpToPage(pageNumber)" class="page-link">{{pageNumber}}</a>
+                </li>
+                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
+            </ul>
+            <ul class="pagination" *ngIf="!canWeJumpPages">
+                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
+                <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
+                    <a class="page-link">{{pageNumber}}</a>
                 </li>
                 <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
             </ul>

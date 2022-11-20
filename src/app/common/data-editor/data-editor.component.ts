@@ -34,6 +34,8 @@ export class DataEditorComponent implements OnInit {
   @Input() pageSize: number = 10;
   currentPage: number = 1;
 
+  canWeJumpPages: Boolean = true;
+
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -85,6 +87,8 @@ export class DataEditorComponent implements OnInit {
 
   onSearchType(key: string) {
     //console.log(this.searchRow)
+    this.canWeJumpPages = false
+    this.currentPage = 1
   }
 
   clearFilters(): void {
@@ -99,6 +103,7 @@ export class DataEditorComponent implements OnInit {
     this.searchRow.stock = ""
     this.searchRow.featured = ""
     this.searchRow.active = ""
+    this.canWeJumpPages = true
   }
 
 

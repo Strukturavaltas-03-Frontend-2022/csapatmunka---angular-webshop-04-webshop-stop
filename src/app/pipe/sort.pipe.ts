@@ -22,7 +22,7 @@ export class SortPipe<T extends { [x: string]: any }> implements PipeTransform {
     else if (property == 'name') {
       list.sort((a, b) => this.ignoreWords(a, property).localeCompare(this.ignoreWords(b, property)));
     }
-    else if (property == 'price') {
+    else if (property == 'price' || property == 'id' || property == 'catId' || property == 'stock' || property == 'featured' || property == 'active') {
       list.sort((a, b) => a[property] - b[property])
     }
     else return list
