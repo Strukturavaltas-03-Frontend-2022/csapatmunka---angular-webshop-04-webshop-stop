@@ -1,30 +1,39 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { Output, Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
   name: 'sort'
 })
 export class SortPipe<T extends { [x: string]: any }> implements PipeTransform {
 
-  transform(list: T[], property: string = 'price'): T[] {
+  ignoreWords(item: any, property: any): any {
+    return item[property].replace(/^The |^A |^An /, "")
+  }
+
+  transform(list: T[], property: string = 'price', ascend: Boolean = true): T[] {
 
     if (!Array.isArray(list)) {
       return list;
     }
+
     if (property == 'author') {
       list.sort((a, b) => a[property].localeCompare(b[property]))
-      return list.sort((a, b) => a[property].split(' ').pop().localeCompare(b[property].split(' ').pop()))
+      list.sort((a, b) => a[property].split(' ').pop().localeCompare(b[property].split(' ').pop()))
     }
     else if (property == 'name') {
-      return list.sort(function (a, b) {
-        a = a[property].replace(/^The /, "");
-        b = b[property].replace(/^The /, "");
-        return a['localeCompare'](b);
-      })
+      list.sort((a, b) => this.ignoreWords(a, property).localeCompare(this.ignoreWords(b, property)));
     }
     else if (property == 'price') {
-      return list.sort((a, b) => a[property] - b[property])
+      list.sort((a, b) => a[property] - b[property])
     }
     else return list
+
+    if (!ascend) {
+      ascend = true
+      return list.reverse()
+    } else {
+      ascend = false
+      return list
+    }
   }
 }
 

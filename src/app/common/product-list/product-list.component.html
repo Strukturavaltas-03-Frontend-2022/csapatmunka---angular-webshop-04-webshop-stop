@@ -1,27 +1,46 @@
-<div class="container col-11 py-2">
+<div class="container col-11 py-1">
 
-  <div class="row d-flex">
-    <label class="mx-3" for="listFilter">Filter books</label>
-    <div class="listFilterInput">
-      <input [(ngModel)]="searchPhrase" type="text" class="form-control" id="listFilter" />
+  <div class="row d-flex flex-column flex-xl-row my-auto">
+    <div class="container__search d-flex">
+      <label class="mx-3 my-auto" for="listFilter">Filter books</label>
+      <div class="listFilterInput my-auto">
+        <input [(ngModel)]="searchPhrase" type="text" class="form-control" id="listFilter"
+          placeholder="Search for item..." />
+      </div>
     </div>
-    <label class="mx-3" for="propertySelect">by</label>
-    <div class="form-group">
-      <select [(ngModel)]="searchProperty" class="form-control" id="propertySelect">
-        <option value="author">author</option>
-        <option value="name">name</option>
-        <option value="description">description</option>
-      </select>
+    <div class="container__by d-flex">
+      <label class="mx-3 my-auto" for="propertySelect">by</label>
+      <div class="form-group my-auto">
+        <select [(ngModel)]="searchProperty" class="form-control" id="propertySelect">
+          <option value="author">Author</option>
+          <option value="name">Title</option>
+          <option value="description">Description</option>
+        </select>
+      </div>
+    </div>
+    <div class="container__sort ml-3 d-flex align-items-center">Sorting order
+      <button [ngSwitch]=" currentSortOrder" class="button__sort d-flex ml-2" (click)=" onReverseList()">
+        <div *ngSwitchCase="'Ascending'" class="button__inside d-flex my-auto">
+          <div class="sort__carat"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+          <div class="sort__text">Ascending</div>
+        </div>
+        <div *ngSwitchCase="'Descending'" class="button__inside d-flex my-auto">
+          <div class="sort__carat"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+          <div class="sort__text">Descending</div>
+        </div>
+        <div *ngSwitchDefault class="button__inside d-flex my-auto">
+          <div class="sort__carat"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+          <div class="sort__text">Ascending</div>
+        </div>
+      </button>
     </div>
   </div>
 </div>
 
-
-
-<div class="container col-11">
+<div class="container col-11 pt-3">
   <div class="row col-12 d-flex justify-content-start flex-wrap">
     <div class="productcard mb-4"
-      *ngFor="let product of productList | search:searchPhrase:searchProperty | sort: 'author' | ascend: false">
+      *ngFor="let product of productList | search:searchPhrase:searchProperty | sort: searchProperty:reverseList">
       <app-product-card [oneProduct]="product"></app-product-card>
     </div>
   </div>
