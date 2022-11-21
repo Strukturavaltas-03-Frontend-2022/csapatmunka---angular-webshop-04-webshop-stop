@@ -1,6 +1,30 @@
 {
   "books": [
     {
+      "id": 1,
+      "catId": 1,
+      "name": "Things Fall Apart",
+      "author": "Chinua Achebe",
+      "description": "Things Fall Apart is the debut novel by Nigerian author Chinua Achebe, first published in 1958. It depicts pre-colonial life in the southeastern part of Nigeria and the invasion by Europeans during the late 19th century. It is seen as the archetypal modern African novel in English, and one of the first to receive global critical acclaim. It is a staple book in schools throughout Africa and is widely read and studied in English-speaking countries around the world. The novel was first published in the UK in 1962 by William Heinemann Ltd, and became the first work published in Heinemann's African Writers Series.",
+      "image": "assets/images/things-fall-apart.jpg",
+      "price": 6.99,
+      "stock": 0,
+      "featured": true,
+      "active": false
+    },
+    {
+      "id": 2,
+      "catId": 1,
+      "name": "Fairy tales",
+      "author": "Hans Christian Andersen",
+      "description": "The nine tales of the three booklets were collected together and published in one volume and sold at seventy-two shillings. A title page, a table of contents, and a preface by Andersen were published in the volume.",
+      "image": "assets/images/fairy-tales.jpg",
+      "price": 14.99,
+      "stock": 7,
+      "featured": true,
+      "active": false
+    },
+    {
       "id": 3,
       "catId": 2,
       "name": "The Divine Comedy",
@@ -10,8 +34,7 @@
       "price": 17.99,
       "stock": 12,
       "featured": false,
-      "active": false,
-      "editable": false
+      "active": false
     },
     {
       "id": 4,
@@ -23,8 +46,7 @@
       "price": 6.99,
       "stock": 9,
       "featured": true,
-      "active": false,
-      "editable": false
+      "active": false
     },
     {
       "id": 5,

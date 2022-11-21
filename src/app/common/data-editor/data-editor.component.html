@@ -1,131 +1,72 @@
-<!--id: number = 0; readonly
-  catId: number = 0;
-  name: string = '';
-  author: string = '';
-  description: string = '';
-  image: string = '';
-  price: number = 0;
-  stock: number = 0;
-  featured: boolean = false;
-  active: boolean = false;-->
-<!--<div class="row mt-3">
-    <div class="col-12">
-        <form (ngSubmit)="onUpdate(product)" style="max-width: 400px;" class="mx-auto">
-            <div class="form-group">
-                <label>ID</label>
-                <input name="id" [(ngModel)]="product.id" type="text" class="form-control ">
-            </div>
-            <div class="form-group">
-                <label>Cat. ID</label>
-                <input name="catId" [(ngModel)]="product.catId" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Name</label>
-                <input name="name" [(ngModel)]="product.name" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Author</label>
-                <input name="author" [(ngModel)]="product.author" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Description</label>
-                <input name="description" [(ngModel)]="product.description" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Image</label>
-                <input name="image" [(ngModel)]="product.image" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Price</label>
-                <input name="price" [(ngModel)]="product.price" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Stock</label>
-                <input name="stock" [(ngModel)]="product.stock" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Featured</label>
-                <input name="featured" [(ngModel)]="product.featured" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Active</label>
-                <input name="active" [(ngModel)]="product.active" type="text" class="form-control">
-            </div>
-
-            <div class="d-grid gap-2 mt-3">
-                <button class="btn btn-primary" type="submit">
-                    <i class="fa fa-save"></i> update </button>
-            </div>
-        </form>
+<section class="segment__top mt-3">
+    <div class="title title__top mb-3">
+        <h2>Admin Page</h2>
     </div>
-</div>-->
-
-<div class="row">
-    <div class="col-12 d-flex justify-content-center">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination" *ngIf="canWeJumpPages">
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
-                <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
-                    <a (click)="jumpToPage(pageNumber)" class="page-link">{{pageNumber}}</a>
-                </li>
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
-            </ul>
-            <ul class="pagination" *ngIf="!canWeJumpPages">
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
-                <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
-                    <a class="page-link">{{pageNumber}}</a>
-                </li>
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
-            </ul>
-        </nav>
+    <div class="userguide">(Click on the header cells to sort the table by that property.)</div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <nav class="pagination__nav" aria-label="Page navigation example">
+                <ul class="pagination pagination__top" *ngIf="canWeJumpPages">
+                    <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
+                        <a (click)="jumpToPage(pageNumber)" class="page-link page-link--active">{{pageNumber}}</a>
+                    </li>
+                </ul>
+                <ul class="pagination" *ngIf="!canWeJumpPages">
+                    <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
+                        <a class="page-link page-link--disabled">{{pageNumber}}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-12">
-        <table class="table table-striped table-dark table-responsive table-hover">
-            <thead>
-                <tr>
-                    <th (click)="onPropertySelect($event)" class="column__click">ID</th>
-                    <th (click)="onPropertySelect($event)" class="column__click">Cat.</th>
-                    <th (click)="onPropertySelect($event)" class="column__click">Name</th>
-                    <th (click)="onPropertySelect($event)" class="column__click">Author</th>
-                    <th (click)="onPropertySelect($event)" class="column__click">Description</th>
-                    <th (click)="onPropertySelect($event)" class="column__click column__image">Image</th>
-                    <th (click)="onPropertySelect($event)" class="column__click text-center">Price</th>
-                    <th (click)="onPropertySelect($event)" class="column__click text-center">Stock</th>
-                    <th (click)="onPropertySelect($event)" class="column__click text-center">Featured</th>
-                    <th (click)="onPropertySelect($event)" class="column__click text-center">Active</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td><input name="id" [(ngModel)]="searchRow.id " type="text" class="form-control"
-                            (keyup)="onSearchType('id')"></td>
-                    <td><input name="catId" [(ngModel)]="searchRow.catId" type="text" class="form-control"
-                            (keyup)="onSearchType('catId')"></td>
-                    <td><input name="name" [(ngModel)]="searchRow.name" type="text" class="form-control"
-                            (keyup)="onSearchType('name')"></td>
-                    <td><input name="author" [(ngModel)]="searchRow.author" type="text" class="form-control"
-                            (keyup)="onSearchType('author')"></td>
-                    <td><input name="description" [(ngModel)]="searchRow.description" type="text" class="form-control"
-                            (keyup)="onSearchType('description')"></td>
-                    <td><input name="image" [(ngModel)]="searchRow.image" type="text" class="form-control"
-                            (keyup)="onSearchType('image')"></td>
-                    <td><input name="price" [(ngModel)]="searchRow.price" type="text" class="form-control"
-                            (keyup)="onSearchType('price')"></td>
-                    <td><input name="stock" [(ngModel)]="searchRow.stock" type="text" class="form-control"
-                            (keyup)="onSearchType('stock')"></td>
-                    <td><input name="featured" [(ngModel)]="searchRow.featured" type="text" class="form-control"
-                            (keyup)="onSearchType('featured')"></td>
-                    <td><input name="active" [(ngModel)]="searchRow.active" type="text" class="form-control"
-                            (keyup)="onSearchType('active')"></td>
-                    <button class="btn btn-info" (click)="clearFilters()">
-                        Clear filters
-                    </button>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let book of booklistAll |sort:sortedProperty:sortOrderSetting
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped table-dark table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th (click)="onPropertySelect($event)" class="column__click">ID</th>
+                        <th (click)="onPropertySelect($event)" class="column__click">Cat.</th>
+                        <th (click)="onPropertySelect($event)" class="column__click">Name</th>
+                        <th (click)="onPropertySelect($event)" class="column__click">Author</th>
+                        <th (click)="onPropertySelect($event)" class="column__click">Description</th>
+                        <th (click)="onPropertySelect($event)" class="column__click column__image">Image</th>
+                        <th (click)="onPropertySelect($event)" class="column__click text-center">Price</th>
+                        <th (click)="onPropertySelect($event)" class="column__click text-center">Stock</th>
+                        <th (click)="onPropertySelect($event)" class="column__click text-center">Featured</th>
+                        <th (click)="onPropertySelect($event)" class="column__click text-center">Active</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><input name="id" [(ngModel)]="searchRow.id " type="text" class="form-control"
+                                (keyup)="onSearchType('id')"></td>
+                        <td><input name="catId" [(ngModel)]="searchRow.catId" type="text" class="form-control"
+                                (keyup)="onSearchType('catId')"></td>
+                        <td><input name="name" [(ngModel)]="searchRow.name" type="text" class="form-control"
+                                (keyup)="onSearchType('name')"></td>
+                        <td><input name="author" [(ngModel)]="searchRow.author" type="text" class="form-control"
+                                (keyup)="onSearchType('author')"></td>
+                        <td><input name="description" [(ngModel)]="searchRow.description" type="text"
+                                class="form-control" (keyup)="onSearchType('description')"></td>
+                        <td><input name="image" [(ngModel)]="searchRow.image" type="text" class="form-control"
+                                (keyup)="onSearchType('image')"></td>
+                        <td><input name="price" [(ngModel)]="searchRow.price" type="text" class="form-control"
+                                (keyup)="onSearchType('price')"></td>
+                        <td><input name="stock" [(ngModel)]="searchRow.stock" type="text" class="form-control"
+                                (keyup)="onSearchType('stock')"></td>
+                        <td><input name="featured" [(ngModel)]="searchRow.featured" type="text" class="form-control"
+                                (keyup)="onSearchType('featured')"></td>
+                        <td><input name="active" [(ngModel)]="searchRow.active" type="text" class="form-control"
+                                (keyup)="onSearchType('active')"></td>
+                        <td class="align-middle">
+                            <button class="btn btn-info" (click)="clearFilters()">
+                                Clear filters
+                            </button>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of booklistAll |sort:sortedProperty:sortOrderSetting
                                                     |search:searchRow.id:'id'
                                                     |search:searchRow.catId:'catId'
                                                     |search:searchRow.name:'name'
@@ -136,78 +77,76 @@
                                                     |search:searchRow.stock:'stock' 
                                                     |search:searchRow.featured:'featured'
                                                     |search:searchRow.active:'active'
-                                                    
+                                                    |slice:((currentPage-1)*pageSize):(currentPage*pageSize)
                                                     ">
-                    <ng-container *ngIf="!book.editable">
-                        <td class="column__narrow align-middle">{{ book.id }}</td>
-                        <td class="column__narrow align-middle">{{ book.catId }}</td>
-                        <td class="align-middle">{{ book.name }}</td>
-                        <td class="align-middle">{{ book.author }}</td>
-                        <td class="column__description">{{ book.description }}</td>
-                        <td class="align-middle">{{ book.image }}</td>
-                        <td class="column__price text-center align-middle">{{ book.price }}</td>
-                        <td class="column__narrow text-center align-middle">{{ book.stock }}</td>
-                        <td class="column__narrow text-center align-middle">{{ book.featured }}</td>
-                        <td class="column__narrow text-center align-middle">{{ book.active }}</td>
-                    </ng-container>
-                    <ng-container *ngIf="book.editable">
-                        <td class="align-middle">{{ book.id }}</td>
-                        <td class="align-middle"><input name="catId" [(ngModel)]="book.catId" type="text"
-                                class="form-control" value="{{ book.catId }}"></td>
-                        <td class="align-middle"><input name="name" [(ngModel)]="book.name" type="text"
-                                class="form-control" value="{{ book.name }}"></td>
-                        <td class="align-middle"><input name="author" [(ngModel)]="book.author" type="text"
-                                class="form-control" value="{{ book.author }}"></td>
-                        <td class="form-group column__description"><textarea name="description"
-                                [(ngModel)]="book.description" type="text" class="form-control"
-                                value="{{ book.description }}" rows="4"></textarea></td>
-                        <td class="align-middle"><input name="image" [(ngModel)]="book.image" type="text"
-                                class="form-control" value="{{ book.image }}"></td>
-                        <td class="align-middle"><input name="price" [(ngModel)]="book.price" type="text"
-                                class="form-control" value="{{ book.price }}"></td>
-                        <td class="align-middle"><input name="stock" [(ngModel)]="book.stock" type="text"
-                                class="form-control" value="{{ book.stock }}"></td>
-                        <td class="align-middle"><input name="featured" [(ngModel)]="book.featured" type="text"
-                                class="form-control" value="{{ book.featured }}"></td>
-                        <td class="align-middle"><input name="active" [(ngModel)]="book.active" type="text"
-                                class="form-control" value="{{ book.active }}"></td>
-                    </ng-container>
-                    <td class="align-middle">
-                        <div class="btn-group">
-                            <button class="btn btn-info" (click)="onEditClick(book)" [disabled]="editInProgress">
-                                <i class="fa fa-edit"></i>
-                            </button>
-                            <button class="btn btn-danger" (click)="onDeleteClick(book)">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                            <button class="btn btn-success" (click)="onSaveClick(book)">
-                                <i class="fa fa-save"></i>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        <!-- Az ngFor és a slice sajnos nem jön ki jól egymással, ilyenkor a változó elveszíti meghatározott Object jellegét. -->
+                        <ng-container *ngIf="!book.editable">
+                            <td class="column__narrow align-middle">{{ book.id }}</td>
+                            <td class="column__narrow align-middle">{{ book.catId }}</td>
+                            <td class="align-middle">{{ book.name }}</td>
+                            <td class="align-middle">{{ book.author }}</td>
+                            <td class="column__description">{{ book.description }}</td>
+                            <td class="align-middle">{{ book.image }}</td>
+                            <td class="column__price text-center align-middle">{{ book.price }}</td>
+                            <td class="column__narrow text-center align-middle">{{ book.stock }}</td>
+                            <td class="column__narrow text-center align-middle">{{ book.featured }}</td>
+                            <td class="column__narrow text-center align-middle">{{ book.active }}</td>
+                        </ng-container>
+                        <ng-container *ngIf="book.editable">
+                            <td class="align-middle">{{ book.id }}</td>
+                            <td class="align-middle"><input name="catId" [(ngModel)]="book.catId" type="text"
+                                    class="form-control" value="{{ book.catId }}"></td>
+                            <td class="align-middle"><input name="name" [(ngModel)]="book.name" type="text"
+                                    class="form-control" value="{{ book.name }}"></td>
+                            <td class="align-middle"><input name="author" [(ngModel)]="book.author" type="text"
+                                    class="form-control" value="{{ book.author }}"></td>
+                            <td class="form-group column__description"><textarea name="description"
+                                    [(ngModel)]="book.description" type="text" class="form-control"
+                                    value="{{ book.description }}" rows="4"></textarea></td>
+                            <td class="align-middle"><input name="image" [(ngModel)]="book.image" type="text"
+                                    class="form-control" value="{{ book.image }}"></td>
+                            <td class="align-middle"><input name="price" [(ngModel)]="book.price" type="text"
+                                    class="form-control" value="{{ book.price }}"></td>
+                            <td class="align-middle"><input name="stock" [(ngModel)]="book.stock" type="text"
+                                    class="form-control" value="{{ book.stock }}"></td>
+                            <td class="align-middle"><input name="featured" [(ngModel)]="book.featured" type="text"
+                                    class="form-control" value="{{ book.featured }}"></td>
+                            <td class="align-middle"><input name="active" [(ngModel)]="book.active" type="text"
+                                    class="form-control" value="{{ book.active }}"></td>
+                        </ng-container>
+                        <td class="align-middle">
+                            <div class="btn-group">
+                                <button class="btn btn-info" (click)="onEditClick(book)" [disabled]="editInProgress">
+                                    <i class="fa fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger" (click)="onDeleteClick(book)">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                                <button class="btn btn-success" (click)="onSaveClick(book)">
+                                    <i class="fa fa-save"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-12 d-flex justify-content-center">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination" *ngIf="canWeJumpPages">
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
-                <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
-                    <a (click)="jumpToPage(pageNumber)" class="page-link">{{pageNumber}}</a>
-                </li>
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
-            </ul>
-            <ul class="pagination" *ngIf="!canWeJumpPages">
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage-1)" class="page-link">Previous</a></li> -->
-                <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
-                    <a class="page-link">{{pageNumber}}</a>
-                </li>
-                <!-- <li class="page-item"><a (click)="jumpToPage(currentPage+1)" class="page-link">Next</a></li> -->
-            </ul>
-        </nav>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <nav class="pagination__nav--bottom" aria-label="Page navigation example">
+                <ul class="pagination pagination__bottom" *ngIf="canWeJumpPages">
+                    <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
+                        <a (click)="jumpToPage(pageNumber)" class="page-link page-link--active">{{pageNumber}}</a>
+                    </li>
+                </ul>
+                <ul class="pagination" *ngIf="!canWeJumpPages">
+                    <li *ngFor="let pageNumber of getPageNumbers()" class="page-item">
+                        <a class="page-link page-link--disabled">{{pageNumber}}</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
+</section>
