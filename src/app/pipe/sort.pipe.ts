@@ -25,6 +25,9 @@ export class SortPipe<T extends { [x: string]: any }> implements PipeTransform {
     else if (property == 'price' || property == 'id' || property == 'catId' || property == 'stock' || property == 'featured' || property == 'active') {
       list.sort((a, b) => a[property] - b[property])
     }
+    else if (property == 'description' || property == 'image') {
+      list.sort((a, b) => a[property].localeCompare(b[property]))
+    }
     else return list
 
     if (!ascend) {

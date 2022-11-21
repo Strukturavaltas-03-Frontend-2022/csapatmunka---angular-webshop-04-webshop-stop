@@ -83,19 +83,19 @@
 
 <div class="row">
     <div class="col-12">
-        <table class="table table-striped table-dark">
+        <table class="table table-striped table-dark table-responsive table-hover">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th> Cat. ID</th>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Stock</th>
-                    <th>Featured</th>
-                    <th>Active</th>
+                    <th (click)="onPropertySelect($event)" class="column__click">ID</th>
+                    <th (click)="onPropertySelect($event)" class="column__click">Cat.</th>
+                    <th (click)="onPropertySelect($event)" class="column__click">Name</th>
+                    <th (click)="onPropertySelect($event)" class="column__click">Author</th>
+                    <th (click)="onPropertySelect($event)" class="column__click">Description</th>
+                    <th (click)="onPropertySelect($event)" class="column__click column__image">Image</th>
+                    <th (click)="onPropertySelect($event)" class="column__click text-center">Price</th>
+                    <th (click)="onPropertySelect($event)" class="column__click text-center">Stock</th>
+                    <th (click)="onPropertySelect($event)" class="column__click text-center">Featured</th>
+                    <th (click)="onPropertySelect($event)" class="column__click text-center">Active</th>
                     <th></th>
                 </tr>
                 <tr>
@@ -125,7 +125,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let book of booklistAll |search:searchRow.id:'id'
+                <tr *ngFor="let book of booklistAll |sort:sortedProperty:sortOrderSetting
+                                                    |search:searchRow.id:'id'
                                                     |search:searchRow.catId:'catId'
                                                     |search:searchRow.name:'name'
                                                     |search:searchRow.author:'author'
@@ -138,47 +139,48 @@
                                                     
                                                     ">
                     <ng-container *ngIf="!book.editable">
-                        <td>{{ book.id }}</td>
-                        <td>{{ book.catId }}</td>
-                        <td>{{ book.name }}</td>
-                        <td>{{ book.author }}</td>
-                        <td>{{ book.description }}</td>
-                        <td>{{ book.image }}</td>
-                        <td>{{ book.price }}</td>
-                        <td>{{ book.stock }}</td>
-                        <td>{{ book.featured }}</td>
-                        <td>{{ book.active }}</td>
+                        <td class="column__narrow align-middle">{{ book.id }}</td>
+                        <td class="column__narrow align-middle">{{ book.catId }}</td>
+                        <td class="align-middle">{{ book.name }}</td>
+                        <td class="align-middle">{{ book.author }}</td>
+                        <td class="column__description">{{ book.description }}</td>
+                        <td class="align-middle">{{ book.image }}</td>
+                        <td class="column__price text-center align-middle">{{ book.price }}</td>
+                        <td class="column__narrow text-center align-middle">{{ book.stock }}</td>
+                        <td class="column__narrow text-center align-middle">{{ book.featured }}</td>
+                        <td class="column__narrow text-center align-middle">{{ book.active }}</td>
                     </ng-container>
                     <ng-container *ngIf="book.editable">
-                        <td>{{ book.id }}</td>
-                        <td><input name="catId" [(ngModel)]="book.catId" type="text" class="form-control"
-                                value="{{ book.catId }}"></td>
-                        <td><input name="name" [(ngModel)]="book.name" type="text" class="form-control"
-                                value="{{ book.name }}"></td>
-                        <td><input name="author" [(ngModel)]="book.author" type="text" class="form-control"
-                                value="{{ book.author }}"></td>
-                        <td><input name="description" [(ngModel)]="book.description" type="text" class="form-control"
-                                value="{{ book.description }}"></td>
-                        <td><input name="image" [(ngModel)]="book.image" type="text" class="form-control"
-                                value="{{ book.image }}"></td>
-                        <td><input name="price" [(ngModel)]="book.price" type="text" class="form-control"
-                                value="{{ book.price }}"></td>
-                        <td><input name="stock" [(ngModel)]="book.stock" type="text" class="form-control"
-                                value="{{ book.stock }}"></td>
-                        <td><input name="featured" [(ngModel)]="book.featured" type="text" class="form-control"
-                                value="{{ book.featured }}"></td>
-                        <td><input name="active" [(ngModel)]="book.active" type="text" class="form-control"
-                                value="{{ book.active }}"></td>
+                        <td class="align-middle">{{ book.id }}</td>
+                        <td class="align-middle"><input name="catId" [(ngModel)]="book.catId" type="text"
+                                class="form-control" value="{{ book.catId }}"></td>
+                        <td class="align-middle"><input name="name" [(ngModel)]="book.name" type="text"
+                                class="form-control" value="{{ book.name }}"></td>
+                        <td class="align-middle"><input name="author" [(ngModel)]="book.author" type="text"
+                                class="form-control" value="{{ book.author }}"></td>
+                        <td class="form-group column__description"><textarea name="description"
+                                [(ngModel)]="book.description" type="text" class="form-control"
+                                value="{{ book.description }}" rows="4"></textarea></td>
+                        <td class="align-middle"><input name="image" [(ngModel)]="book.image" type="text"
+                                class="form-control" value="{{ book.image }}"></td>
+                        <td class="align-middle"><input name="price" [(ngModel)]="book.price" type="text"
+                                class="form-control" value="{{ book.price }}"></td>
+                        <td class="align-middle"><input name="stock" [(ngModel)]="book.stock" type="text"
+                                class="form-control" value="{{ book.stock }}"></td>
+                        <td class="align-middle"><input name="featured" [(ngModel)]="book.featured" type="text"
+                                class="form-control" value="{{ book.featured }}"></td>
+                        <td class="align-middle"><input name="active" [(ngModel)]="book.active" type="text"
+                                class="form-control" value="{{ book.active }}"></td>
                     </ng-container>
-                    <td>
+                    <td class="align-middle">
                         <div class="btn-group">
-                            <button class="btn btn-info" (click)="onEditClick(book)">
+                            <button class="btn btn-info" (click)="onEditClick(book)" [disabled]="editInProgress">
                                 <i class="fa fa-edit"></i>
                             </button>
                             <button class="btn btn-danger" (click)="onDeleteClick(book)">
                                 <i class="fa fa-trash"></i>
                             </button>
-                            <button class="btn btn-info" (click)="onSaveClick(book)">
+                            <button class="btn btn-success" (click)="onSaveClick(book)">
                                 <i class="fa fa-save"></i>
                             </button>
                         </div>

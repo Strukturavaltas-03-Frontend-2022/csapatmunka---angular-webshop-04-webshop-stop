@@ -1,0 +1,25 @@
+.column__click {
+  cursor: pointer;
+}
+
+.column__description {
+  width: 400px;
+  height: 100px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.column__narrow {
+  width: 20px;
+  text-align: center;
+}
+
+table {
+  border-radius: 1rem;
+}
+
+.column__image {
+  width: 50px;
+}
