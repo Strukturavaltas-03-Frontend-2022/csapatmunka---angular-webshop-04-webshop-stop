@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
 
   searchPhrase: string = ''
   searchProperty: string = 'author'
+  sortProperty: string = 'name'
   currentSortOrder: string = "Ascending";
 
   reverseList: Boolean = true;
