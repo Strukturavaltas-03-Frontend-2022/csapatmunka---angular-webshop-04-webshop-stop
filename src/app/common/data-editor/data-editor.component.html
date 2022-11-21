@@ -181,33 +181,43 @@
                     <input name="image" [(ngModel)]="newBook.image" type="text" class="form-control" required>
                 </div>
 
-                <div class="form-group">
-                    <label>Price</label>
-                    <input name="price" [(ngModel)]="newBook.price" type="number" class="form-control" required>
-                </div>
+                <div class="container__form--pricestock d-flex justify-content-between text-center">
 
-                <div class="form-group">
-                    <label>Stock</label>
-                    <input name="stock" [(ngModel)]="newBook.stock" type="number" class="form-control">
-                </div>
+                    <div class="form-group">
+                        <label>Category ID</label>
+                        <input name="catId" [(ngModel)]="newBook.catId" type="number"
+                            class="form-control text-center pl-4" required pattern="^[1-3]$">
+                    </div>
 
-                <div class="form-group">
-                    <label>Featured</label>
-                    <input name="stock" [(ngModel)]="newBook.featured" type="checkbox" class="form-control">
-                </div>
+                    <div class="form-group">
+                        <label>Stock</label>
+                        <input name="stock" [(ngModel)]="newBook.stock" type="number"
+                            class="form-control text-center pl-4">
+                    </div>
 
-                <div class="form-group">
-                    <label>Active</label>
-                    <input name="stock" [(ngModel)]="newBook.active" type="checkbox" class="form-control">
+                    <div class="form-group">
+                        <label>Price</label>
+                        <input name="price" [(ngModel)]="newBook.price" type="number"
+                            class="form-control text-center pl-4" required>
+                    </div>
                 </div>
+                <div class="container__form--checkbox d-flex justify-content-center">
+                    <div class="form-check form-check-inline">
+                        <input name="featured" [(ngModel)]="newBook.featured" type="checkbox"
+                            class="form-check-input checkbox--large" value="">
+                        <label class="form-check-label">Featured</label>
+                    </div>
 
-                <div class="form-group">
-                    <label>Category ID</label>
-                    <input name="catId" [(ngModel)]="newBook.catId" type="text" class="form-control" required>
+                    <div class="form-check form-check-inline">
+                        <input name="active" [(ngModel)]="newBook.active" type="checkbox"
+                            class="form-check-input checkbox--large" value="">
+                        <label class="form-check-label">Active</label>
+                    </div>
+
                 </div>
 
                 <div class="d-grid gap-2 mt-3">
-                    <button [disabled]="bookEditorForm.invalid" class="btn btn-primary" type="submit">
+                    <button [disabled]="bookEditorForm.invalid" class="btn btn-block button__submit" type="submit">
                         Create new item</button>
                 </div>
             </form>

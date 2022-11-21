@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { format } from 'path';
 import { Product } from 'src/app/model/classes/product';
 import { ProductService } from 'src/app/service/product.service';
+import { ViewportScroller } from '@angular/common';
+
 
 
 class EditableProduct extends Product {
@@ -45,6 +47,8 @@ export class DataEditorComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private router: Router,
+    public readonly viewportScroller: ViewportScroller
+
   ) { }
 
   ngOnInit(): void {
@@ -142,12 +146,16 @@ export class DataEditorComponent implements OnInit {
     this.currentPage = 1
   }
 
+  onScrollToTop(): void {
+    this.viewportScroller.scrollToPosition([0, 0])
+  }
 
   onAddBook(book: Product, f: NgForm): void {
     this.productService.create(book).subscribe(() =>
       this.productService.getAll().subscribe(data => {
         this.booklistAll = data;
         f.reset()
+        this.onScrollToTop()
       }))
   }
 }

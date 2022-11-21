@@ -1200,6 +1200,42 @@
       "stock": 10,
       "featured": false,
       "active": false
+    },
+    {
+      "id": 101,
+      "catId": 0,
+      "name": "fsafsd",
+      "author": "fa",
+      "description": "fsafs",
+      "image": "fsdaf",
+      "price": 0,
+      "stock": 0,
+      "featured": false,
+      "active": true
+    },
+    {
+      "id": 102,
+      "catId": 0,
+      "name": "22",
+      "author": "22",
+      "description": "22",
+      "image": "22",
+      "price": 0,
+      "stock": 0,
+      "featured": false,
+      "active": false
+    },
+    {
+      "id": 103,
+      "catId": 0,
+      "name": "1",
+      "author": "1",
+      "description": "1",
+      "image": "1",
+      "price": 0,
+      "stock": 0,
+      "featured": false,
+      "active": false
     }
   ]
 }

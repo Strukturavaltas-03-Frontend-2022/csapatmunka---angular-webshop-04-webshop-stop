@@ -68,3 +68,24 @@ table {
 .column__image {
   width: 50px;
 }
+
+.form-select {
+  width: 100%;
+  height: 50px
+}
+
+.container__form--pricestock {
+  gap: 10px;
+}
+
+.checkbox--large {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+}
+
+.button__submit {
+  text-transform: none !important;
+  background-color: #eba952 !important;
+  color: white !important;
+}
