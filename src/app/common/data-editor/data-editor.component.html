@@ -150,3 +150,67 @@
         </div>
     </div>
 </section>
+
+<section class="segment__bottom mt-3">
+    <div class="title title__top mb-3">
+        <h2>Create new item</h2>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <form #bookEditorForm="ngForm" (ngSubmit)="onAddBook(newBook,bookEditorForm)" style="max-width: 400px"
+                action="" class="mx-auto">
+
+                <div class="form-group">
+                    <label>Author</label>
+                    <input name="author" [(ngModel)]="newBook.author" type="text" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input name="name" [(ngModel)]="newBook.name" type="text" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="name" [(ngModel)]="newBook.description" type="text" class="form-control" required
+                        rows="5"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Image path</label>
+                    <input name="image" [(ngModel)]="newBook.image" type="text" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <input name="price" [(ngModel)]="newBook.price" type="number" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Stock</label>
+                    <input name="stock" [(ngModel)]="newBook.stock" type="number" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Featured</label>
+                    <input name="stock" [(ngModel)]="newBook.featured" type="checkbox" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Active</label>
+                    <input name="stock" [(ngModel)]="newBook.active" type="checkbox" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Category ID</label>
+                    <input name="catId" [(ngModel)]="newBook.catId" type="text" class="form-control" required>
+                </div>
+
+                <div class="d-grid gap-2 mt-3">
+                    <button [disabled]="bookEditorForm.invalid" class="btn btn-primary" type="submit">
+                        Create new item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

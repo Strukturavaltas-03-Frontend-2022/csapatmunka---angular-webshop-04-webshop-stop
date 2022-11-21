@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { format } from 'path';
 import { Product } from 'src/app/model/classes/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -38,6 +40,7 @@ export class DataEditorComponent implements OnInit {
 
   sortedProperty: string = 'id'
   sortOrderSetting: Boolean = true;
+  newBook: Product = new Product
 
   constructor(
     private productService: ProductService,
@@ -137,5 +140,14 @@ export class DataEditorComponent implements OnInit {
     }
     this.sortOrderSetting = !this.sortOrderSetting
     this.currentPage = 1
+  }
+
+
+  onAddBook(book: Product, f: NgForm): void {
+    this.productService.create(book).subscribe(() =>
+      this.productService.getAll().subscribe(data => {
+        this.booklistAll = data;
+        f.reset()
+      }))
   }
 }

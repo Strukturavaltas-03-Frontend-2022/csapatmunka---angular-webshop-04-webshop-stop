@@ -78,6 +78,12 @@ button div .fa-chevron-down {
   transition: transform 0.5s ease;
 }
 
+.productcard:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+  cursor: default;
+}
+
 
 @media (max-width: 767.98px) {
   .productcard {
