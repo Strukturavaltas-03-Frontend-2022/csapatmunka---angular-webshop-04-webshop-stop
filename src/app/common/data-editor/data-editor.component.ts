@@ -28,11 +28,16 @@ export class DataEditorComponent implements OnInit {
     stock: "",
     featured: "",
     active: "",
-
   }
 
   @Input() pageSize: number = 10;
   currentPage: number = 1;
+
+  canWeJumpPages: Boolean = true;
+  editInProgress: Boolean = false;
+
+  sortedProperty: string = 'price'
+  sortOrderSetting: Boolean = true;
 
   constructor(
     private productService: ProductService,
@@ -59,36 +64,40 @@ export class DataEditorComponent implements OnInit {
   }
 
   onEditClick(book: EditableProduct) {
-    // console.log(book)
     if (book.editable) {
       book.editable = false
     }
     else {
       book.editable = true
+      this.editInProgress = true
     }
   }
 
   onDeleteClick(book: Product) {
-    this.productService.delete(book).subscribe(() => console.log("user deleted"))
-    this.productService.getAll().subscribe(data => {
-      this.booklistAll = data
-    })
+    this.productService.delete(book).subscribe(() =>
+      this.productService.getAll().subscribe(data => {
+        this.booklistAll = data
+      })
+    )
+    this.editInProgress = false
   }
 
   onSaveClick(book: EditableProduct) {
     book.editable = false
-    this.productService.update(book as Product).subscribe(() => console.log("user updated"))
-    this.productService.getAll().subscribe(data => {
-      this.booklistAll = data
-    })
+    this.productService.update(book as Product).subscribe(() =>
+      this.productService.getAll().subscribe(data => {
+        this.booklistAll = data
+      })
+    )
+    this.editInProgress = false
   }
 
   onSearchType(key: string) {
-    //console.log(this.searchRow)
+    this.canWeJumpPages = false
+    this.currentPage = 1
   }
 
   clearFilters(): void {
-
     this.searchRow.id = ""
     this.searchRow.catId = ""
     this.searchRow.name = ""
@@ -99,7 +108,33 @@ export class DataEditorComponent implements OnInit {
     this.searchRow.stock = ""
     this.searchRow.featured = ""
     this.searchRow.active = ""
+    this.canWeJumpPages = true
   }
 
-
+  onPropertySelect(ev: Event): void {
+    switch ((ev.target as Element).textContent) {
+      case 'ID': this.sortedProperty = 'id';
+        break;
+      case 'Cat.': this.sortedProperty = 'catId';
+        break;
+      case 'Name': this.sortedProperty = 'name';
+        break;
+      case 'Author': this.sortedProperty = 'author';
+        break;
+      case 'Description': this.sortedProperty = 'description';
+        break;
+      case 'Image': this.sortedProperty = 'image';
+        break;
+      case 'Price': this.sortedProperty = 'price';
+        break;
+      case 'Stock': this.sortedProperty = 'stock';
+        break;
+      case 'Featured': this.sortedProperty = 'featured';
+        break;
+      case 'Active': this.sortedProperty = 'active';
+        break;
+      default: null
+    }
+    this.sortOrderSetting = !this.sortOrderSetting
+  }
 }
