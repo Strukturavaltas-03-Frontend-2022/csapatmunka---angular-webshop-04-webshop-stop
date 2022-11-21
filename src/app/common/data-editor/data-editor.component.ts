@@ -136,5 +136,6 @@ export class DataEditorComponent implements OnInit {
       default: null
     }
     this.sortOrderSetting = !this.sortOrderSetting
+    this.currentPage = 1
   }
 }

@@ -19,36 +19,41 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAll().subscribe(data => {
-    this.booklistCaruselTop = this.gt.getRandom(data.filter(item => item.featured), 5)
-    this.booklistCaruselBottom = this.gt.getRandom(data, 5)})
+      this.booklistCaruselTop = this.gt.getRandom(data.filter(item => item.featured), 5)
+      this.booklistCaruselBottom = this.gt.getRandom(data.filter(item => item.active), 5)
+    })
     //console.log(this.booklistCarusel)
   }
 
   onCarusRightTop(): void {
     console.log('rihgt')
     this.productService.getAll().subscribe(data => {
-    this.booklistCaruselTop = this.gt.getRandom(data.filter(item => item.featured), 5)})
+      this.booklistCaruselTop = this.gt.getRandom(data.filter(item => item.featured), 5)
+    })
 
   }
 
   onCarusLeftTop(): void {
     console.log('left')
     this.productService.getAll().subscribe(data => {
-    this.booklistCaruselTop = this.gt.getRandom(data.filter(item => item.featured), 5)})
+      this.booklistCaruselTop = this.gt.getRandom(data.filter(item => item.featured), 5)
+    })
 
   }
 
   onCarusRightBottom(): void {
     //onsole.log('rihgt')
     this.productService.getAll().subscribe(data => {
-    this.booklistCaruselBottom = this.gt.getRandom(data, 5)})
+      this.booklistCaruselBottom = this.gt.getRandom(data.filter(item => item.active), 5)
+    })
 
   }
 
   onCarusLeftBottom(): void {
     //console.log('left')
     this.productService.getAll().subscribe(data => {
-    this.booklistCaruselBottom = this.gt.getRandom(data, 5)})
+      this.booklistCaruselBottom = this.gt.getRandom(data.filter(item => item.active), 5)
+    })
   }
 
 
