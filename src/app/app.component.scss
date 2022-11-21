@@ -29,6 +29,8 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
+
+
 .row1 {
   border: solid;
   border-width: 1px 0;
@@ -293,6 +295,11 @@ section {
   .fl_right {
     display: block;
     float: none;
+  }
+
+  .fl_left a,
+  .fl_left a:hover {
+    color: #dfdfdf;
   }
 
   .group .group>*:last-child,

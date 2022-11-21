@@ -1186,7 +1186,8 @@
       "price": 4.99,
       "stock": 0,
       "featured": true,
-      "active": false
+      "active": false,
+      "editable": false
     },
     {
       "id": 100,

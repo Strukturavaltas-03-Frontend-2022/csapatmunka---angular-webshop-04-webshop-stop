@@ -36,7 +36,7 @@ export class DataEditorComponent implements OnInit {
   canWeJumpPages: Boolean = true;
   editInProgress: Boolean = false;
 
-  sortedProperty: string = 'price'
+  sortedProperty: string = 'id'
   sortOrderSetting: Boolean = true;
 
   constructor(

@@ -50,7 +50,7 @@
   position: relative;
   left: 5px;
   background-color: rgba($color: #000000, $alpha: 0.5);
-  width: 140px;
+  flex-grow: 1;
   height: 40px;
   border-radius: 10px;
   color: white;
@@ -115,5 +115,9 @@ button div .fa-chevron-down {
   .container__sort {
     width: 40px;
     text-align: center;
+  }
+
+  .button__sort {
+    width: 140px;
   }
 }
