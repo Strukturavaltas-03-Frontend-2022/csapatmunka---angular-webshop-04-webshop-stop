@@ -46,7 +46,7 @@
       "price": 6.99,
       "stock": 9,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 5,
@@ -70,7 +70,7 @@
       "price": 14.99,
       "stock": 11,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 7,
@@ -154,7 +154,7 @@
       "price": 8.99,
       "stock": 12,
       "featured": true,
-      "active": true
+      "active": false
     },
     {
       "id": 14,
@@ -190,8 +190,7 @@
       "price": 15.99,
       "stock": 11,
       "featured": false,
-      "active": false,
-      "editable": false
+      "active": false
     },
     {
       "id": 17,
@@ -203,8 +202,7 @@
       "price": 9.99,
       "stock": 7,
       "featured": true,
-      "active": false,
-      "editable": false
+      "active": true
     },
     {
       "id": 18,
@@ -228,7 +226,7 @@
       "price": 9.99,
       "stock": 4,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 20,
@@ -252,7 +250,7 @@
       "price": 10.99,
       "stock": 2,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 22,
@@ -276,7 +274,7 @@
       "price": 11.99,
       "stock": 7,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 24,
@@ -312,7 +310,7 @@
       "price": 11.99,
       "stock": 1,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 27,
@@ -396,7 +394,7 @@
       "price": 5.99,
       "stock": 5,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 34,
@@ -420,7 +418,7 @@
       "price": 13.99,
       "stock": 3,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 36,
@@ -456,7 +454,7 @@
       "price": 6.99,
       "stock": 12,
       "featured": true,
-      "active": false
+      "active": true
     },
     {
       "id": 39,
@@ -504,7 +502,7 @@
       "price": 15.99,
       "stock": 11,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 43,
@@ -516,7 +514,7 @@
       "price": 5.99,
       "stock": 7,
       "featured": true,
-      "active": true
+      "active": false
     },
     {
       "id": 44,
@@ -552,7 +550,7 @@
       "price": 12.99,
       "stock": 4,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 47,
@@ -588,7 +586,7 @@
       "price": 6.99,
       "stock": 8,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 50,
@@ -600,7 +598,7 @@
       "price": 15.99,
       "stock": 5,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 51,
@@ -744,7 +742,7 @@
       "price": 7.99,
       "stock": 0,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 63,
@@ -756,7 +754,7 @@
       "price": 17.99,
       "stock": 10,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 64,
@@ -840,7 +838,7 @@
       "price": 11.99,
       "stock": 4,
       "featured": true,
-      "active": true
+      "active": false
     },
     {
       "id": 71,
@@ -852,7 +850,7 @@
       "price": 16.99,
       "stock": 1,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 72,
@@ -876,7 +874,7 @@
       "price": 5.99,
       "stock": 2,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 74,
@@ -888,7 +886,7 @@
       "price": 8.99,
       "stock": 5,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 75,
@@ -972,7 +970,7 @@
       "price": 4.99,
       "stock": 0,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 82,
@@ -984,7 +982,7 @@
       "price": 10.99,
       "stock": 0,
       "featured": true,
-      "active": true
+      "active": false
     },
     {
       "id": 83,
@@ -1020,7 +1018,7 @@
       "price": 15.99,
       "stock": 12,
       "featured": false,
-      "active": false
+      "active": true
     },
     {
       "id": 86,
@@ -1080,7 +1078,7 @@
       "price": 13.99,
       "stock": 4,
       "featured": false,
-      "active": true
+      "active": false
     },
     {
       "id": 91,
@@ -1188,8 +1186,7 @@
       "price": 4.99,
       "stock": 0,
       "featured": true,
-      "active": false,
-      "editable": false
+      "active": false
     },
     {
       "id": 100,
@@ -1200,42 +1197,6 @@
       "image": "assets/images/memoirs-of-hadrian.jpg",
       "price": 14.99,
       "stock": 10,
-      "featured": false,
-      "active": false
-    },
-    {
-      "id": 101,
-      "catId": 0,
-      "name": "fsafsd",
-      "author": "fa",
-      "description": "fsafs",
-      "image": "fsdaf",
-      "price": 0,
-      "stock": 0,
-      "featured": false,
-      "active": true
-    },
-    {
-      "id": 102,
-      "catId": 0,
-      "name": "22",
-      "author": "22",
-      "description": "22",
-      "image": "22",
-      "price": 0,
-      "stock": 0,
-      "featured": false,
-      "active": false
-    },
-    {
-      "id": 103,
-      "catId": 0,
-      "name": "1",
-      "author": "1",
-      "description": "1",
-      "image": "1",
-      "price": 0,
-      "stock": 0,
       "featured": false,
       "active": false
     }
